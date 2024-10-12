@@ -1,0 +1,15 @@
+//Terrains
+
+terrain Nuke
+{
+	Footclip 10
+	Liquid
+	DamageAmount 5
+	DamageType Slime
+	DamageTimeMask 31
+	AllowProtection
+}
+
+floor NUKAGE1 Nuke
+floor NUKAGE2 Nuke
+floor NUKAGE3 Nuke

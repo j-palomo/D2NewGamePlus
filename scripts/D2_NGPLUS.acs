@@ -1,0 +1,296 @@
+#library "D2_NGPLUS"
+#include "zcommon.acs"
+
+#libdefine wateralpha 96
+#libdefine nukealpha 32
+#libdefine bloodalpa 16
+
+Function Bool CheckMapMD5 (str MD5, str mapname)
+{
+	bool md5_match = false;
+	str zs_MD5 = ScriptCall ("ACS_MapCheck", "GetMapMD5", mapname);
+	If (MD5 == zs_MD5) md5_match = true;
+	return md5_match;
+}
+
+Script "D2_AllMaps_Enter" Enter
+{
+	If (GameSkill () >= 5)
+	{
+		If (CheckInventory ("Fist"))
+		{
+			GiveInventory ("Unarmed", 1);
+			TakeInventory ("Fist", 1);
+		}
+		
+		If (CheckInventory ("Pistol"))
+		{
+			GiveInventory ("HandGun", 1);
+			TakeInventory ("Pistol", 1);
+		}
+	}
+}
+
+Script "D2_MAP30_Open" Open
+{
+	If (CheckMapMD5 ("5eecd88f4491f516d590ce4bbf45f532", "MAP30"))
+	{
+		SetThingSpecial (1, ACS_NamedExecuteAlways, "D2_MAP30_End", 0);
+	}
+}
+
+Script "D2_MAP30_End" (void)
+{
+	If (GameSkill () <= 4)
+	{
+		If (GetLevelInfo (LEVELINFO_LEVELNUM) == 30)
+		{
+			Delay (100);
+			ChangeLevel ("MAP01", 0, CHANGELEVEL_NOINTERMISSION, 5);
+		}
+	}
+}
+
+Script "D2_MAP01_Open" Open
+{
+	If (GameSkill () >= 5)
+	{
+		If (GetLevelInfo (LEVELINFO_LEVELNUM) == 1)
+		{
+			If (CheckMapMD5 ("3c9902e376cca1e9c3be8763bdc21df5", "MAP01"))
+			{
+				Sector_SetPlaneReflection (1, wateralpha, 0);
+				SetFogDensity (1, 400);
+				Sector_SetFade (1, 45, 25, 10);
+				SetFogDensity (7, 400);
+				Sector_SetFade (7, 45, 25, 10);
+				SetLineSpecial (2, ACS_NamedExecuteAlways, "D2_MAP01_SecretSwitch", 0, 2);
+			}
+		}
+	}
+}
+
+Script "D2_MAP01_SecretSwitch" (Int GreenLight)
+{
+	Thing_Deactivate (GreenLight);
+	Int RedLight = UniqueTID();
+	SpawnForced ("PointLight", -64.0, 664.0, 152.0, RedLight, 0);
+	SetThingSpecial (RedLight, 0, 255, 127, 127, 32, 0);
+	Door_Open (2, 16, 0);
+}
+
+
+Script "D2_MAP02_Open" Open
+{
+	If (GameSkill () >= 5)
+	{
+		If (GetLevelInfo (LEVELINFO_LEVELNUM) == 2)
+		{
+			If (CheckMapMD5 ("ab24ae6e2cb13cbdd04600a4d37f9189", "MAP02"))
+			{
+				// Replaces all water and grass textures with damaging floors. Good luck
+				ReplaceTextures ("FWATER1", "NUKAGE1", 0);
+				ReplaceTextures ("FWATER2", "NUKAGE1", 0);
+				ReplaceTextures ("FWATER3", "NUKAGE1", 0);
+				ReplaceTextures ("FWATER4", "NUKAGE1", 0);
+				ReplaceTextures ("GRASS2", "NUKAGE1", 0);
+				
+				// Set a sublte reflection on all of the liquids
+				Sector_SetPlaneReflection (3, nukealpha, 0);
+				Sector_SetPlaneReflection (6, nukealpha, 0);
+				Sector_SetPlaneReflection (8, nukealpha, 0);
+				Sector_SetPlaneReflection (15, nukealpha, 0);
+				Sector_SetPlaneReflection (16, nukealpha, 0);
+				Sector_SetPlaneReflection (17, nukealpha, 0);
+				Sector_SetPlaneReflection (18, nukealpha, 0);
+				Sector_SetPlaneReflection (19, nukealpha, 0);
+				Sector_SetPlaneReflection (20, nukealpha, 0);
+				Sector_SetPlaneReflection (21, nukealpha, 0);
+				Sector_SetPlaneReflection (22, nukealpha, nukealpha);
+				
+				Int DL1 = UniqueTID(0, 0);
+				SpawnForced ("DynamicLight", 1208.0, 1184.1, 88.0, DL1, 0);
+				SetThingSpecial (DL1, 0, 255, 127, 127, 24, 0); // Light for the first switch
+				Int DL2 = UniqueTID(0, 0);
+				SpawnForced ("DynamicLight", 792.0, 1184.1, 88.0, DL2, 0);
+				SetThingSpecial (DL2, 0, 255, 127, 127, 24, 0); // Light for the first switch
+				
+				SetLineSpecial (8, ACS_NamedExecuteWithResult, "MAP02_1stSwitch", DL1);
+				SetLineSpecial (3, ACS_NamedExecuteWithResult, "MAP02_2ndSwitch", DL2);
+			}
+		}
+	}
+}
+
+Script "MAP02_1stSwitch" (Int RedLight)
+{
+	Thing_Deactivate (RedLight);
+	Int GreenLight = UniqueTID(0, 0);
+	SpawnForced ("DynamicLight", 1208.0, 1184.1, 72.0, GreenLight, 0);
+	SetThingSpecial (GreenLight, 0, 127, 255, 127, 24, 0);
+	Floor_LowerToHighest (8, 8, 128);
+}
+
+Script "MAP02_2ndSwitch" (Int RedLight)
+{
+	Thing_Deactivate (RedLight);
+	Int GreenLight = UniqueTID(0, 0);
+	SpawnForced ("DynamicLight", 792.0, 1184.1, 72.0, GreenLight, 0);
+	SetThingSpecial (GreenLight, 0, 127, 255, 127, 24, 0);
+	Floor_LowerToHighest (3, 8, 128);
+}
+
+Script "D2_MAP03_Open" Open
+{
+	If (GameSkill () >= 5)
+	{
+		If (GetLevelInfo (LEVELINFO_LEVELNUM) == 3)
+		{
+			// Replaces all water and grass textures with damaging floors. Good luck
+			ReplaceTextures ("FWATER1", "NUKAGE1", 0);
+			ReplaceTextures ("FWATER2", "NUKAGE1", 0);
+			ReplaceTextures ("FWATER3", "NUKAGE1", 0);
+			ReplaceTextures ("FWATER4", "NUKAGE1", 0);
+			ReplaceTextures ("GRASS2", "NUKAGE1", 0);
+			SpawnForced ("RadSuit", 2944.0, 3360.0, 96.0, 0, 0);
+			SpawnForced ("RadSuit", 4000.0, 2776.0, 112.0, 0, 0);
+			SpawnForced ("RadSuit", 3100.0, 2756.0, 112.0, 0, 0);
+			SpawnForced ("Archvile", 3576.0, 3696.0, 112.0, 0, 144);
+			SpawnForced ("Revenant", 2368.0, 2756.0, 40.0, 0, 0);
+			SpawnForced ("PainElemental", 2320.0, 3232.0, 72.0, 0, 0);
+			Int CGG_ID1 = UniqueTID(0, 0);
+			SpawnForced ("ChaingunGuy", 2208.0, 3520.0, -64.0, CGG_ID1, 224);
+			SetActorFlag (CGG_ID1, "AMBUSH", true);
+			Int HK_ID1 = UniqueTID(0, 0);
+			SpawnForced ("HellKnight", 4304.0, 2880.0, 112.0, HK_ID1, 64);
+			SetActorFlag (HK_ID1, "AMBUSH", true);
+			
+			
+			// Set a sublte reflection on all of the liquids
+			Sector_SetPlaneReflection (1, nukealpha, 0);
+			Sector_SetPlaneReflection (10, nukealpha, 0);
+			Sector_SetPlaneReflection (13, nukealpha, 0);
+			Sector_SetPlaneReflection (14, nukealpha, 0);
+			Sector_SetPlaneReflection (19, nukealpha, 0);
+			Sector_SetPlaneReflection (21, nukealpha, 0);
+			Sector_SetPlaneReflection (22, nukealpha, 0);
+			Sector_SetPlaneReflection (23, nukealpha, 0);
+			Sector_SetPlaneReflection (24, nukealpha, 0);
+			Sector_SetPlaneReflection (25, nukealpha, 0);
+			Sector_SetPlaneReflection (26, nukealpha, 0);
+			Sector_SetPlaneReflection (27, nukealpha, 0);
+			Sector_SetPlaneReflection (28, nukealpha, 0);
+			Sector_SetPlaneReflection (29, nukealpha, 0);
+			Sector_SetPlaneReflection (30, nukealpha, 0);
+			Sector_SetPlaneReflection (31, nukealpha, 0);
+			Sector_SetPlaneReflection (32, nukealpha, 0);
+			Sector_SetPlaneReflection (33, nukealpha, 0);
+			Sector_SetPlaneReflection (34, nukealpha, 0);
+			Sector_SetPlaneReflection (35, nukealpha, 0);
+			Sector_SetPlaneReflection (36, nukealpha, 0);
+			Sector_SetPlaneReflection (37, nukealpha, 0);
+			Sector_SetPlaneReflection (38, nukealpha, 0);
+			
+			SetLineSpecial (27, Teleport, 0, 27, 0, 0, 0); // Change the teleport destination to the secret
+			SpawnForced ("TeleportDest", 2032.0, 3520.0, 0, 5, 0);
+			SpawnForced ("TeleportDest", 2000.0, 3520.0, 0, 5, 0);
+			SpawnForced ("TeleportDest", 1968.0, 3520.0, 0, 5, 0);
+			SpawnForced ("TeleportDest", 1936.0, 3520.0, 0, 5, 0);
+			SetLineSpecial (5, Teleport, 5, 0, 0, 0, 0); // Prevent players from just jumping up to this ledge
+			SetLineActivation (5, SPAC_Cross, 1);
+			SetLineSpecial (13, ACS_NamedExecuteWithResult, "MAP03_1stSwitch"); // Need to do this to update the texture and remove the reflection
+		}
+	}
+}
+
+Script "MAP03_1stSwitch" (void)
+{
+	Sector_SetPlaneReflection (13, 0, 0);
+	Plat_RaiseAndStayTx0 (13, 4);
+	SetResultValue (True);
+}
+
+Script "D2_MAP07_Open" Open
+{
+	If (GameSkill () >= 5)
+	{
+		If (GetLevelInfo (LEVELINFO_LEVELNUM) == 7)
+		{
+			Int MW_01 = 1;
+			Int MW_02 = 2;
+			SpawnForced ("Mindweaver", -1312.0, -224.0, 32.0, MW_01, 0);
+			SpawnForced ("Mindweaver", -1248.0, 192.0, 32.0, MW_01, 0);
+			SpawnForced ("Mindweaver", -1248.0, -640.0, 32.0, MW_01, 0);
+			SetActorFlag (MW_01, "MAP07BOSS1", true);
+			
+			SetActorFlag (1, "MAP07BOSS1", true);
+			
+			SpawnForced ("Mindweaver", -1600.0, 640.0, 32.0, MW_02, 224);
+			SpawnForced ("Mindweaver", 320.0, 640.0, 32.0, MW_02, 160);
+			SpawnForced ("Mindweaver", -1600.0, -1088.0, 32.0, MW_02, 32);
+			SpawnForced ("Mindweaver", 320.0, -1088.0, 32.0, MW_02, 96);
+			SetActorFlag (2, "MAP07BOSS2", true);
+			
+			SpawnForced ("FuelAmmoSmall", 64.0, 192.0, 32.0, 0, 0);
+			SpawnForced ("FuelAmmoSmall", -1344.0, 192.0, 32.0, 0, 0);
+			SpawnForced ("FuelAmmoSmall", -1344.0, -640.0, 32.0, 0, 0);
+			SpawnForced ("FuelAmmoSmall", 64.0, -640.0, 32.0, 0, 0);
+			SpawnForced ("FuelAmmoSmall", -608.0, 640.0, 8.0, 0, 0);
+			SpawnForced ("FuelAmmoSmall", -1632.0, -224.0, 8.0, 0, 0);
+			SpawnForced ("FuelAmmoSmall", -608.0, -1088.0, 8.0, 0, 0);
+			SpawnForced ("FuelAmmoSmall", 352.0, -224.0, 8.0, 0, 0);
+			SpawnForced ("FuelAmmoLarge", -1856.0, 656.0, 0, 0, 0);
+			
+			SpawnForced ("Incinerator", 80.0, -208.0, 32.0, 0, 0);
+			SpawnForced ("Heatwave", -1856.0, 608.0, 0, 0, 0);
+			
+			While (ThingCount (T_NONE, 1))
+			{
+				Delay (1);
+			}
+			Delay (35);
+			Floor_LowerToLowest (8, 8);
+			Floor_LowerToLowest (9, 8);
+			Floor_LowerToLowest (10, 8);
+			Floor_LowerToLowest (11, 8); // Replace the normal mancubus death check to inclued the new monsters
+			While (ThingCount (T_NONE, 2))
+			{
+				Delay (1);
+			}
+			Delay (35);
+			Floor_RaiseByTexture (7, 8); // Replace the normal arachnotron death check to inclued the new monsters
+			Floor_LowerByValue (13, 8, 88);
+		}
+	}
+}
+
+
+Script "D2_MAP31_Open" Open
+{
+	If (GameSkill () >= 5)
+	{
+		If (GetLevelInfo (LEVELINFO_LEVELNUM) == 31)
+		{
+			If (CheckMapMD5 ("3ff94e27423f91c1585b3396f0c03459", "MAP31"))
+			{
+				Sector_SetPlaneReflection (1, 0, wateralpha);
+				Sector_SetPlaneReflection (2, 0, wateralpha);
+				Sector_SetPlaneReflection (3, 0, wateralpha);
+				Sector_SetPlaneReflection (4, 0, wateralpha);
+				Sector_SetPlaneReflection (5, 0, wateralpha);
+				Sector_SetPlaneReflection (6, 0, wateralpha);
+				Sector_SetPlaneReflection (7, 0, wateralpha);
+				Sector_SetPlaneReflection (8, 0, wateralpha);
+				Sector_SetPlaneReflection (9, 0, wateralpha);
+				Sector_SetPlaneReflection (10, 0, wateralpha);
+				Sector_SetPlaneReflection (11, 0, wateralpha);
+				Sector_SetPlaneReflection (12, 0, wateralpha);
+				Sector_SetPlaneReflection (13, 0, wateralpha);
+				Sector_SetPlaneReflection (14, 0, wateralpha);
+				Sector_SetPlaneReflection (15, 0, wateralpha);
+				Sector_SetPlaneReflection (16, 0, bloodalpa);
+				Sector_SetPlaneReflection (17, 0, bloodalpa);
+			}
+		}
+	}
+}

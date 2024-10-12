@@ -1,0 +1,21 @@
+version "4.10"
+
+#include "zscript/JP_ACS.zscript"
+#include "zscript/JP_constants.zscript"
+#include "zscript/JP_LevelPP.zscript"
+
+#include "zscript/actors/doom/items/ammo.zscript"
+
+#include "zscript/actors/doom/items/weaponincinerator.zscript"
+#include "zscript/actors/doom/items/weaponheatwave.zscript"
+#include "zscript/actors/doom/items/weaponfist.zscript"
+#include "zscript/actors/doom/items/weaponpistol.zscript"
+
+#include "zscript/ui/statusbar/doom_lor_sbar.zscript"
+
+#include "zscript/actors/doom/monsters/ghoul.zscript"
+#include "zscript/actors/doom/monsters/banshee.zscript"
+#include "zscript/actors/doom/monsters/mindweaver.zscript"
+#include "zscript/actors/doom/monsters/shocktrooper.zscript"
+#include "zscript/actors/doom/monsters/vassago.zscript"
+#include "zscript/actors/doom/monsters/tyrant.zscript"

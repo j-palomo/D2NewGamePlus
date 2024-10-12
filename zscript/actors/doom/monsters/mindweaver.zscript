@@ -1,0 +1,62 @@
+Class Mindweaver : Actor // Editor number apparently doesn't replace it
+{						 
+	Default
+	{
+		Health 500;
+		Radius 64;
+		Height 64;
+		Mass 600;
+		Speed 12;
+		PainChance 40;
+		Monster;
+		ReactionTime 8;
+		+COUNTKILL;
+		+JUSTATTACKED;
+		SeeSound "mindweaver/sight";
+		AttackSound "mindweaver/attack";
+		PainSound "mindweaver/pain";
+		DeathSound "mindweaver/death";
+		ActiveSound "mindweaver/active";
+		Obituary "$OB_MINDWEAVER";
+		Tag "$TAG_MINDWEAVER";
+	}
+	
+	States
+	{
+		Spawn:
+			CSPI AB 10 A_Look;
+			Loop;
+		See:
+			CSPI A 20;
+		Walk:
+			CSPI A 0 A_StartSound ("mindweaver/walk");
+			CSPI AABBCC 3 A_Chase;
+			CSPI C 0 A_StartSound ("mindweaver/walk");
+			CSPI DDEEFF 3 A_Chase;
+			Loop;
+		Missile:
+			CSPI A 20 Bright A_FaceTarget;
+		Fighting:
+			CSPI G 4 Bright A_SPosAttack;
+			CSPI H 4 Bright A_SPosAttack;
+			CSPI H 1 Bright A_SpidRefire;
+			goto Fighting;
+
+		Pain:
+			CSPI I 3;
+			CSPI I 3 A_Pain;
+			goto Walk;
+			
+		Death:
+			CSPI J 20 A_Scream;
+			CSPI K 7 A_Fall;
+			CSPI LMNO 7;
+			CSPI P -1 A_BossDeath;
+			stop;
+			
+		Raise:
+			CSPI P 5;
+			CSPI ONMLKJ 5;
+			goto Walk;
+	}
+}

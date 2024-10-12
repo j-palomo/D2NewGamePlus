@@ -1,0 +1,48 @@
+Class HandGun : DoomWeapon
+{
+	Default
+	{
+		Weapon.SelectionOrder 1900;
+		Weapon.AmmoUse 1;
+		Weapon.AmmoGive 20;
+		Weapon.AmmoType "Clip";
+		Weapon.SlotNumber 2;
+		Obituary "$OB_MPPISTOL";
+		+WEAPON.WIMPY_WEAPON
+		Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED";
+		Tag "$TAG_PISTOL";
+	}
+	
+	States
+	{
+		Ready:
+			PISG A 1 A_WeaponReady;
+			Loop;
+		Deselect:
+			PISG A 1 A_Lower;
+			Loop;
+		Select:
+			PISG A 1 A_Raise;
+			Loop;
+		Fire:
+			PISG A 2;
+			PISG B 2 A_FireHandGun ();
+			PISG CDECA 2;
+			PISG A 5 A_ReFire;
+			Goto Ready;
+		Flash:
+			PISF A 2 Bright A_Light1;
+			Goto LightDone;
+		Spawn:
+			PIST A -1;
+			Stop;
+	}
+	
+	Action Void A_FireHandGun ()
+	{
+		int dmg = random (15, 20);
+		A_FireBullets (2.0, 2.0, 1, dmg, "BulletPuff", FBF_USEAMMO|FBF_NORANDOM);
+		A_StartSound("weapons/pistol", CHAN_WEAPON);
+		A_GunFlash();
+	}
+}

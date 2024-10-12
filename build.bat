@@ -1,0 +1,1 @@
+7z a -tzip "D2NewGamePlus.pk3" *.txt* *.zscript* acs\ brightmaps\ graphics\ scripts\ zscript\ LICENSE

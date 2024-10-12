@@ -1,0 +1,32 @@
+
+GameInfo
+{
+	StatusBarClass = "LoR_DoomStatusBar"
+}
+
+Skill NewGamePlus
+{
+	ACSReturn = 5
+	SpawnFilter = 5
+	SpawnMulti
+	Name = "New Game+"
+	NoMenu
+	
+}
+
+DoomEdNums
+{
+	3006 = "Ghoul" // replaces lost soul placed on map, but not from spawning from pain elemental
+	3007 = "Ghoul"
+	3008 = "Banshee"
+	3009 = "Mindweaver"
+	3010 = "Shocktrooper"
+	3011 = "Vassago"
+	3012 = "Tyrant"
+	3013 = "TyrantBoss1"
+	3014 = "TyrantBoss2"
+	3200 = "FuelAmmoSmall"
+	3201 = "FuelAmmoLarge"
+	3202 = "Incinerator"
+	3203 = "Heatwave"
+}

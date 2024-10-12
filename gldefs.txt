@@ -1,0 +1,437 @@
+Glow
+{
+	Texture "NUKAGE1", SpringGreen, 64, fullbright
+}
+
+Glow
+{
+	Texture "NUKAGE2", SpringGreen, 64, fullbright
+}
+
+Glow
+{
+	Texture "NUKAGE3", SpringGreen, 64, fullbright
+}
+
+flickerlight HEATWAVE1
+{
+    color 0.91 0.596 0.379
+    size 96
+    secondarySize 128
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight HEATWAVE2
+{
+    color 0.91 0.596 0.379
+    size 128
+    secondarySize 160
+    chance 0.5
+	attenuate 1
+}
+
+flickerlight HEATWAVE3
+{
+    color 0.95 0.5 0.2
+    size 96
+    secondarySize 128
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight HEATWAVE4
+{
+    color 0.75 0.35 0.15
+    size 64
+    secondarySize 96
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight HEATWAVE5
+{
+    color 0.5 0.28 0.11
+    size 48
+    secondarySize 80
+    chance 0.3
+	attenuate 1
+}
+
+object HeatwaveRipper
+{
+	frame HETBA {light HEATWAVE1}
+	frame HETBB {light HEATWAVE1}
+	frame HETBC {light HEATWAVE1}
+	frame HETBD {light HEATWAVE2}
+	frame HETBE {light HEATWAVE3}
+	frame HETBF {light HEATWAVE3}
+	frame HETBG {light HEATWAVE4}
+	frame HETBH {light HEATWAVE5}
+	frame HETBI {light HEATWAVE5}
+}
+
+flickerlight INCIN1
+{
+    color 1.0 0.56 0.23
+    size 32
+    secondarySize 64
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight INCIN2
+{
+    color 1.0 0.56 0.23
+    size 48
+    secondarySize 96
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight INCIN3
+{
+    color 1.0 0.56 0.23
+    size 64
+    secondarySize 128
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight INCIN4
+{
+    color 1.0 0.56 0.23
+    size 80
+    secondarySize 160
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight INCIN5
+{
+    color 1.0 0.56 0.23
+    size 96
+    secondarySize 192
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight INCIN6
+{
+    color 1.0 0.56 0.23
+    size 112
+    secondarySize 224
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight INCIN7
+{
+    color 0.5 0.28 0.12
+    size 32
+    secondarySize 64
+    chance 0.3
+	attenuate 1
+}
+
+object IncineratorFlame
+{
+	frame IFLMA {light INCIN1}
+	frame IFLMB {light INCIN2}
+	frame IFLMC {light INCIN3}
+	frame IFLMD {light INCIN4}
+	frame IFLME {light INCIN3}
+	frame IFLMF {light INCIN2}
+	frame IFLMG {light INCIN1}
+	frame IFLMH {light INCIN7}
+	frame IFLMI {light INCIN3}
+	frame IFLMJ {light INCIN4}
+	frame IFLMK {light INCIN5}
+	frame IFLML {light INCIN6}
+	frame IFLMM {light INCIN5}
+	frame IFLMN {light INCIN4}
+	frame IFLMO {light INCIN3}
+	frame IFLMP {light INCIN7}
+}
+
+brightmap sprite FLMFA0
+{
+	map "brightmaps/FLMFA0.png"
+	disablefullbright
+}
+
+brightmap sprite FLMFB0
+{
+	map "brightmaps/FLMFB0.png"
+	disablefullbright
+}
+
+pointlight GHOUL1
+{
+    color 0.6 0.5 0.3
+    size 64
+	attenuate 1
+}
+
+flickerlight GHOUL2
+{
+    color 0.7 0.7 0.35
+    size 108
+    secondarySize 120
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight GHOUL3
+{
+    color 0.6 0.6 0.3
+    size 132
+    secondarySize 144
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight GHOUL4
+{
+    color 0.4 0.4 0.2
+    size 72
+    secondarySize 48
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight GHOUL5
+{
+    color 0.2 0.2 0.1
+    size 36
+    secondarySize 24
+    chance 0.3
+	attenuate 1
+}
+
+pointlight GHOULPAIN
+{
+	color 0.1 0.1 0.5
+	size 32
+	attenuate 1
+}
+
+pointlight GHOULATTACK
+{
+	color 0.7 0.7 0.35
+	size 32
+	attenuate 1
+}
+
+object Ghoul
+{
+	frame GHULE0 {light GHOULATTACK}
+	frame GHULF0 {light GHOULATTACK}
+	frame GHULG0 {light GHOULATTACK}
+	frame GHULI0 {light GHOULPAIN}
+	frame GHULJ0 {light GHOULPAIN}
+	frame GHULK0 {light GHOULPAIN}
+}
+
+object GhoulBall
+{
+	frame GBALA0 {light GHOUL1}
+	frame GBALB0 {light GHOUL1}
+	frame GBALC0 {light GHOUL1}
+	frame APBXB0 {light GHOUL2}
+	frame APBXC0 {light GHOUL3}
+	frame APBXD0 {light GHOUL4}
+	frame APBXE0 {light GHOUL5}
+}
+
+//
+
+pointlight BANSHEE1
+{
+    color 1.0 0.1 0.1
+    size 84
+	attenuate 1
+}
+
+
+flickerlight BANSHEE2
+{
+    color 1.0 0.7 0.5
+    size 96
+    secondarySize 108
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight BANSHEE3
+{
+    color 0.5 0.3 0.2
+    size 120
+    secondarySize 132
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight BANSHEE4
+{
+    color 0.3 0.1 0.1
+    size 144
+    secondarySize 156
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight BANSHEE5
+{
+    color 0.3 0.1 0.1
+    size 160
+    secondarySize 172
+    chance 0.3
+	attenuate 1
+}
+
+//
+
+
+// Use the player brightmaps since the sprites are very similar
+brightmap sprite PPOSF1
+{
+	map "brightmaps/doom/PLAYf1.png"
+	disablefullbright
+}
+
+brightmap sprite PPOSF2F8
+{
+	map "brightmaps/doom/PLAYf2f8.png"
+	disablefullbright
+}
+
+brightmap sprite PPOSF3F7
+{
+	map "brightmaps/doom/PLAYf3f7.png"
+	disablefullbright
+}
+
+brightmap sprite PPOSF4F6
+{
+	map "brightmaps/doom/PLAYf4f6.png"
+	disablefullbright
+}
+
+brightmap sprite PPOSF5
+{
+	map "brightmaps/doom/PLAYf5.png"
+	disablefullbright
+}
+
+object ShockTrooper
+{
+    frame PPOSF { light ZOMBIEATK }
+}
+
+//
+
+flickerlight VASSFLAME1
+{
+    color 1.0 0.56 0.23
+    size 64
+    secondarySize 96
+    chance 0.4
+	attenuate 1
+}
+
+flickerlight VASSFLAME2
+{
+    color 1.0 0.56 0.23
+    size 96
+    secondarySize 128
+    chance 0.5
+	attenuate 1
+}
+
+flickerlight VASSFLAME3
+{
+    color 1.0 0.56 0.23
+    size 128
+    secondarySize 160
+    chance 0.5
+	attenuate 1
+}
+
+flickerlight VASSFLAME4
+{
+    color 1.0 0.56 0.23
+    size 160
+    secondarySize 224
+    chance 0.5
+	attenuate 1
+}
+
+flickerlight VASSFLAME5
+{
+    color 1.0 0.56 0.23
+    size 192
+    secondarySize 288
+    chance 0.5
+	attenuate 1
+}
+
+flickerlight VASSFLAME6
+{
+    color 0.5 0.28 0.12
+    size 96
+    secondarySize 144
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight VASSFLAME7
+{
+    color 0.5 0.28 0.12
+    size 64
+    secondarySize 128
+    chance 0.4
+	attenuate 1
+}
+
+flickerlight VASSFLAME8
+{
+    color 0.5 0.28 0.12
+    size 32
+    secondarySize 64
+    chance 0.5
+	attenuate 1
+}
+
+object VassagoFlame
+{
+	frame VFLMA0 {light VASSFLAME1}
+	frame VFLMB0 {light VASSFLAME1}
+	frame VFLMC0 {light VASSFLAME2}
+	frame VFLMD0 {light VASSFLAME3}
+	frame VFLME0 {light VASSFLAME4}
+	frame VFLMF0 {light VASSFLAME5}
+	frame VFLMG0 {light VASSFLAME5}
+	frame VFLMH0 {light VASSFLAME5}
+	frame VFLMI0 {light VASSFLAME4}
+	frame VFLMJ0 {light VASSFLAME3}
+	frame VFLMK0 {light VASSFLAME3}
+	frame VFLML0 {light VASSFLAME6}
+	frame VFLMM0 {light VASSFLAME6}
+	frame VFLMN0 {light VASSFLAME6}
+	frame VFLMO0 {light VASSFLAME7}
+	frame VFLMP0 {light VASSFLAME7}
+	frame VFLMQ0 {light VASSFLAME8}
+}
+
+//
+
+object TyrantRocket
+{
+    frame MISLA { light ROCKET    }
+
+    frame MISLB { light ROCKET_X1 }
+    frame MISLC { light ROCKET_X2 }
+    frame MISLD { light ROCKET_X3 }
+}
+

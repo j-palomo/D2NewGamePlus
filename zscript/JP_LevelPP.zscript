@@ -1,0 +1,272 @@
+Extend Class NGPLUS_LevelPostProcessor
+{
+	protected void Apply(Name checksum, String mapname)
+    {
+		If (skill < 5)
+		{
+			Switch (checksum)
+			{
+				Case '5eecd88f4491f516d590ce4bbf45f532': // MAP30
+					SetThingID (0, 1); // Boss brain death special needs to be changed to warp to map01 after finishing the game
+//					SetThingSpecial (0, 80);
+//					SetThingArgument (0, 0, 30);
+					break;
+			}
+		}
+		If (skill == 5) // Hidden difficulty. Either use the console to set or beat the game once
+		{
+			Switch (checksum)
+			{
+				/*
+					
+					SpawnFlags are in constants in gzdoom.pk3. See EMapThingFlags
+					MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH|MTF_DEATHMATCH
+				*/
+				case 'none':
+					return;
+				Case '3c9902e376cca1e9c3be8763bdc21df5': // MAP01
+					AddSectorTag (14, 1); // Water sector outside
+					AddSectorTag (10, 7);
+					AddSectorTag (11, 7);
+					AddSectorTag (12, 7);
+					AddSectorTag (24, 7);
+					AddSectorTag (26, 7);
+					AddSectorTag (17, 7);
+					AddSectorTag (15, 7);
+					AddSectorTag (30, 7);
+					// Fix the missing textures outside spawn
+					SetWallTexture (334, 1, 2, "BRONZE1");
+					SetWallTexture (334, 1, 1, "MIDBARS3");
+					SetWallTexture (335, 1, 2, "BRONZE1");
+					SetWallTexture (335, 1, 1, "MIDBARS3");
+					SetWallTexture (369, 1, 2, "BRONZE1");
+					SetWallTexture (369, 1, 1, "MIDBARS3");
+					// Spawn new things
+					SpawnThing(T_HellKnight, (-224.0, 1056.0, 0), 64, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing(T_Revenant, (384.0, 1376.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing(T_Revenant, (992.0, 1088.0, 0), 270, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Incinerator, (-48.0, 664.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_Chaingunguy, (608.0, 1600.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Shell, (-224.0, 928.0, 8.0));
+					SpawnThing (T_Shell, (96.0, 928.0, 8.0));
+					SpawnThing (T_Shell, (384.0, 1472.0, 56.0));
+					SpawnThing (T_Clip, (384.0, 1408.0, 56.0));
+					SpawnThing (T_Shell, (384.0, 1344.0, 56.0));
+					SpawnThing (T_Clip, (384.0, 1280.0, 56.0));
+					SpawnThing (T_Stimpack, (384.0, 1024.0, 56.0));
+					SpawnThing (T_Shell, (192.0, 1728.0, 56.0));
+					SpawnThing (T_Stimpack, (384.0, 1856.0, 48.0));
+					SpawnThing (T_RocketLauncher, (1248.0, 384.0, -32.0));
+					SpawnThing (T_RocketAmmo, (1242.0, 388.0, -32.0));
+					SpawnThing (T_RocketAmmo, (1256.0, 386.0, -32.0));
+					SpawnThing (T_FuelAmmoSmall, (1184.0, 608.0, 40.0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_Shell, (928.0, 736.0, 72.0));
+					SpawnThing (T_Shotgun, (640.0, 800.0, 56.0));
+					SpawnThing (T_Shotgun, (-96.0, 784.0, 56.0));
+					SpawnThing (T_Shocktrooper, (416.0, 672.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Shocktrooper, (928.0, 736.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					// Extra lighting
+					SpawnPointLight ((-128.0, 1376.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((0, 1376.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((0, 1504.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((-128.0, 1504.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((-128.0, 1632.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((32.0, 1663.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((96.0, 1536.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((224.0, 1536.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((416.0, 1663.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((320.0, 1444.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((447.9, 1440.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((320.0, 1312.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((320.0, 1056.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((447.9, 1312.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((320.0, 1184.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((448.0, 1184.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((20.0, 1056.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((448.0, 1056.0, 124.0), 255, 255, 127, 24);
+					SpawnPointLight ((992.0, 1036.0, 112.0), 255, 127, 127, 24);
+					SpawnPointLight ((-64.0, 664.0, 16.0), 127, 255, 127, 24, 2); // This gets deactivated by a script later
+					// Line horizon for outdoor area
+					SetLineSpecial (304, 9);
+					SetLineSpecial (305, 9);
+					SetLineSpecial (306, 9);
+					SetLineSpecial (307, 9);
+					// Raise the wall on the outdoor area near spawn
+					OffsetSectorPlane (12, sector.floor, 64);
+					break;
+					
+				Case 'ab24ae6e2cb13cbdd04600a4d37f9189': // MAP02
+					AddSectorTag (11, 6); // Water near spawn
+					AddSectorTag (2, 15); // Water after first switch
+					AddSectorTag (73, 16); // Grass near red key
+					AddSectorTag (55, 17); // Water near stuck shotgunner
+					AddSectorTag (96, 18); // Water down the south drop to blue key
+					AddSectorTag (59, 19); // Water down the north drop to blue key
+					AddSectorTag (95, 20); // Water in blue key room
+					AddSectorTag (44, 21); // Water in front of blue door back to main hall
+					AddSectorTag (94, 22); // Teleporter in secret room
+					SetThingXY (85, 944.0, 912.0); // Stuck Shotgunner
+					SpawnThing (T_RadSuit, (1244.0, 1672.0, 0));
+					SpawnThing (T_RadSuit, (1232.0, 480.0, -32.0));
+					SpawnPointLight ((700.0, 1528.0, 64.0), 255, 127, 127, 32); // Exit sign
+					SpawnPointLight ((928.0, 416.0, 0), 255, 127, 127, 64);
+					SpawnPointLight ((928.0, 416.0, 64.0), 255, 127, 127, 64);
+					
+					break;
+				
+				Case '5e8679670469f92e15cf4219b5b98fef': // MAP03
+					AddSectorTag (31, 14);
+					AddSectorTag (30, 21);
+					AddSectorTag (32, 22);
+					AddSectorTag (23, 23);
+					AddSectorTag (15, 24);
+					AddSectorTag (33, 25);
+					AddSectorTag (34, 26);
+					AddSectorTag (63, 27);
+					AddSectorTag (67, 28);
+					AddSectorTag (97, 29);
+					AddSectorTag (102, 30);
+					AddSectorTag (117, 31);
+					AddSectorTag (89, 32);
+					AddSectorTag (108, 33);
+					AddSectorTag (58, 34);
+					AddSectorTag (60, 35);
+					AddSectorTag (37, 36);
+					AddSectorTag (69, 37);
+					AddSectorTag (70, 38);
+					ClearLineIDs (528);
+					AddLineID(528, 27);
+					AddLineID(343, 5);
+					AddLineID(305, 7);
+					break;
+				
+				
+				Case '291f24417fb3dd411339ae82ef9b3597': // MAP07
+					ClearSectorTags (11);
+					ClearSectorTags (15);
+					ClearSectorTags (20);
+					ClearSectorTags (28);
+					ClearSectorTags (1);
+					AddSectorTag (1, 7);
+					AddSectorTag (2, 13);
+					OffsetSectorPlane (2, Sector.floor, 88); // Move this up to prevent jumping to the exit
+					AddSectorTag (11, 8);
+					AddSectorTag (15, 9);
+					AddSectorTag (20, 10);
+					AddSectorTag (28, 11);
+					ClearSectorTags (25);
+					AddSectorTag (25, 12);
+					OffsetSectorPlane(25, Sector.ceiling, 112); // Make this a door that closes after 30 seconds instead of only opening from the inside
+					// Mancubus
+					SetThingID (23, 1);
+					SetThingID (24, 1);
+					SetThingID (25, 1);
+					SetThingID (26, 1);
+					SetThingID (27, 1);
+					SetThingID (28, 1);
+					SetThingID (80, 1);
+					// Arachnotron
+					SetThingID (11, 2);
+					SetThingID (12, 2);
+					SetThingID (13, 2);
+					SetThingID (14, 2);
+					SetThingID (15, 2);
+					SetThingID (16, 2);
+					SetThingID (17, 2);
+					SetThingID (18, 2);
+					SetThingID (19, 2);
+					SetThingID (20, 2);
+					SetThingID (21, 2);
+					SetThingID (22, 2);
+					ClearLineSpecial (169);
+					SetLineSpecial (174, 11, 12, 16, 0, 0, 0); // "Secret" exit instead will open up the door if it closes on you
+					SetSectorSpecial (25, 74); // Door closes after 30 seconds
+					
+					SetSectorSpecial (23, 1024); // Make this the secret instead
+					SetSectorSpecial (1, 0); // Remove this secret
+					break;
+					
+				Case '5eecd88f4491f516d590ce4bbf45f532': // MAP30
+					SetLineVertexes (55, 10, 26); // remove the dumb console error
+					SetSectorTexture (0, sector.floor, "NUKAGE4"); // Make the floor match the walls
+					SpawnThing (T_Incinerator, (2848.0, -928.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH); // Give new weapons
+					SpawnThing (T_HeatWave, (2848.0, -992.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoLarge, (2784.0, -800.0, 0), 0);
+					SpawnThing (T_FuelAmmoLarge, (2848.0, -800.0, 0), 0);
+					SpawnThing (T_FuelAmmoLarge, (2912.0, -800.0, 0), 0);
+					SpawnThing (T_FuelAmmoLarge, (2848.0, -704.0, 0), 0);
+					SpawnThing (T_BossEye, (2880.0, 1424.0, 384.0), 0);
+					break;
+					
+				Case '3ff94e27423f91c1585b3396f0c03459': // MAP31
+					// Add secret to small room with rocket launcher
+					SetSectorSpecial (59, 1024);
+					// And another to the plasma rifle room
+					SetSectorSpecial (49, 1024);
+					// Water ceiling in secret
+					AddSectorTag (21, 1);
+					AddSectorTag (22, 2);
+					AddSectorTag (23, 3);
+					AddSectorTag (26, 4);
+					AddSectorTag (27, 5);
+					AddSectorTag (29, 6);
+					AddSectorTag (30, 7);
+					AddSectorTag (31, 8);
+					AddSectorTag (32, 9);
+					AddSectorTag (33, 10);
+					AddSectorTag (34, 11);
+					AddSectorTag (35, 12);
+					AddSectorTag (36, 13);
+					AddSectorTag (37, 14);
+					AddSectorTag (38, 15);
+					// Blood ceiling in secret
+					AddSectorTag (25, 16);
+					AddSectorTag (28, 17);
+					// Add new monsters to the secret
+					SpawnThing (T_Banshee, (1632.0, -1264.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Banshee, (1680.0, -1280.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Banshee, (1728.0, -1296.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Banshee, (2304.0, -880.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Banshee, (2304.0, -928.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Banshee, (2304.0, -976.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					// New boss enemy, and some more items to make it worth visiting this room
+					SpawnThing (T_Vassago, (1856.0, 1088.0, 0), 180);
+					SpawnThing (T_FuelAmmoLarge, (1600.0, 1408.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_CellPack, (2304.0, 1088.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					// Add new weapons
+					SpawnThing (T_Incinerator, (-1152.0, 1088.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoSmall, (-1408.0, 576.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoSmall, (-896.0, 576.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					break;
+					
+				Case 'aa4ca3fc891d13821accabd836e29eb5': // MAP32
+					SetSectorLight (0, 128);
+					SetSectorLight (3, 160);
+					SetSectorLight (8, 112);
+					SetSectorLight (9, 112);
+					SetSectorLight (1, 112);
+					SetSectorLight (2, 112);
+					SetSectorLight (12, 192);
+					SetSectorLight (13, 192);
+					SetSectorLight (10, 192);
+					uint TB_MAP32 = SpawnThing (T_TyrantBoss1, (448.0, 2632.0, 0), 90);
+					SetThingSpecial (TB_MAP32, 11); // Killing the tyrant unleashes the cyberdemon
+					SetThingArgument (TB_MAP32, 0, 1);
+					SetThingArgument (TB_MAP32, 1, 8);
+					SpawnThing (T_Incinerator, (448.0, 1536.0, 0));
+					SpawnThing (T_FuelAmmoLarge, (320.0, 1536.0, 0), 0);
+					SpawnThing (T_FuelAmmoLarge, (576.0, 1536.0, 0), 0);
+					SpawnThing (T_FuelAmmoLarge, (448.0, 1440.0, 0), 0);
+					SpawnThing (T_HeatWave, (448.0, 1408.0, 0), 0);
+					AddSectorTag (18, 2);
+					SetThingSpecial (60, 11); // Must kill Cyberdemon to exit the level
+					SetThingArgument (60, 0, 2);
+					SetThingArgument (60, 1, 8);
+					ClearLineSpecial (166);
+					ClearLineSpecial (167);
+					ClearLineSpecial (168);
+					break;
+			}
+		}
+    }
+}

@@ -1,0 +1,24 @@
+
+decal HeatWaveScorch1
+{
+	pic HETSA0
+	randomflipx
+	randomflipy
+	shade "00 00 00"
+}
+
+decal HeatWaveScorch2
+{
+	pic HETSB0
+	randomflipx
+	randomflipy
+	shade "00 00 00"
+}
+
+decalgroup HeatWaveScorch
+{
+	HeatWaveScorch1 1
+	HeatWaveScorch2 1
+}
+
+generator HeatWaveRipper HeatWaveScorch

@@ -1,0 +1,13 @@
+Class ACS_MapCheck
+{
+	static string GetMapMD5 (string MapName) // Returns the md5 for the map that you specify. remove the bottom comment to have the result printed to the console
+	{
+		string md5 = "";
+		If (level.info.MapExists (MapName))
+		{
+			md5 = level.info.MapChecksum(MapName);
+		}
+//		Console.Printf(md5);
+		return md5;
+	}
+}

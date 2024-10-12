@@ -1,0 +1,77 @@
+Class Unarmed : DoomWeapon
+{
+	Default
+	{
+		Weapon.SlotNumber 1;
+		Weapon.SelectionOrder 3700;
+		Weapon.Kickback 100;
+		Obituary "$OB_MPFIST";
+		Tag "$TAG_FIST";
+		+WEAPON.WIMPY_WEAPON;
+		+WEAPON.MELEEWEAPON;
+		+WEAPON.NOAUTOSWITCHTO;
+		+WEAPON.CHEATNOTWEAPON;
+		+INVENTORY.UNDROPPABLE;
+	}
+	
+	States
+	{
+		Spawn:
+			TNT1 A 1;
+			Loop;
+			
+		Select:
+			PUNG A Random(0, 1) A_Raise();
+			Loop;
+			
+		Deselect:
+			PUNG A Random(0, 1) A_Lower();
+			Loop;
+		
+		Ready:
+			PUNG A 1 A_WeaponReady ();
+			Loop;
+			
+		Fire:
+			PUNG B 4;
+			PUNG C 4 A_Punch ();
+			PUNG D 5;
+			PUNG C 4;
+			PUNG B 5 A_ReFire ();
+			Goto Ready;
+	}
+	
+	Action void A_UnarmedAttack ()
+	{
+		int dmg = random(5,15);
+		if (FindInventory("PowerStrength"))
+		{
+			dmg *= 10;
+		}
+		A_CustomPunch(dmg, true, pufftype:"UnarmedPuff", range: 96.0, meleesound: "*fist");
+	}
+}
+
+Class UnarmedPuff : Actor
+{
+	Default
+	{
+		DamageType "Blunt";
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		+ALLOWPARTICLES;
+		+RANDOMIZE;
+		+ZDOOMTRANS;
+		RenderStyle "Translucent";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+	}
+	
+	States
+	{
+		Spawn:
+			PUFF CD 4;
+			Stop;
+	}
+}

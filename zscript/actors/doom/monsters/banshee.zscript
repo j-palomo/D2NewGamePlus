@@ -1,0 +1,53 @@
+Class Banshee : Actor
+{
+	bool exploded;
+	Default
+	{
+		Health 100;
+		Speed 8;
+		Radius 20;
+		Height 56;
+		ReactionTime 8;
+		PainChance 64;
+		Mass 500;
+		Monster;
+		+FLOAT;
+		+NOGRAVITY;
+		SeeSound "banshee/sight";
+		PainSound "banshee/pain";
+		DeathSound "banshee/death";
+		Tag "$TAG_BANSHEE";
+		Obituary "$OB_BANSHEE";
+	}
+	
+	States
+	{
+		Spawn:
+			BSHE A 0 NoDelay {self.exploded = false;}
+			Goto SpawnLoop;
+		SpawnLoop:
+			BSHE ABC 10 Bright Light("BANSHEE1") A_Look();
+			Loop;
+		See:
+			BSHE AAABBBCCCAAABBBCCC 2 Bright Light("BANSHEE1") A_Chase();
+			BSHE A 0 Bright A_StartSound("banshee/active");
+			Loop;
+		Melee:
+			BSHE D 1 Bright Light("BANSHEE2") A_Explode(128, 128.0, XF_HURTSOURCE|XF_NOTMISSILE|XF_CIRCULAR, damagetype:"Explosive");
+			Wait;
+			
+		Pain:
+			BSHE D 3 Bright Light("BANSHEE1");
+			BSHE D 3 Bright Light("BANSHEE1") A_Pain();
+			Goto See;
+			
+		Death:
+			BSHE D 4 Bright Light("BANSHEE1");
+			BSHE E 6 Bright Light("BANSHEE2") A_Scream();
+			BSHE F 8 Bright Light("BANSHEE3") A_Fall();
+			BSHE G 6 Bright Light("BANSHEE4");
+			BSHE H 4 Bright Light("BANSHEE5");
+			TNT1 A 20;
+			Stop;
+	}
+}

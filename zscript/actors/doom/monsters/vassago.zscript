@@ -1,0 +1,118 @@
+Class Vassago : Actor
+{
+	Default
+	{
+		Monster;
+		Health 1000;
+		Speed 8;
+		Radius 24;
+		Height 64;
+		ReactionTime 8;
+		PainChance 100;
+		Mass 1000;
+		SeeSound "vassago/sight";
+		ActiveSound "vassago/active";
+		PainSound "vassago/pain";
+		DeathSound "vassago/death";
+		Tag "$TAG_VASSAGO";
+		HitObituary "$OB_VASSAGO1";
+		Obituary "$OB_VASSAGO2";
+	}
+	
+	States
+	{
+		Spawn:
+			VASS AB 10 A_Look ();
+			loop;
+		See:
+			VASS AABBCCDD 3 A_Chase ();
+			loop;
+		Melee:
+		Missile:
+			VASS E 0 Bright A_StartSound("vassago/attack");
+			VASS E 8 Bright A_FaceTarget();
+			VASS FG 4 Bright A_FaceTarget();
+			VASS H 8 Bright A_VassAttack();
+			Goto See;
+		Pain:
+			VASS I 2;
+			VASS I 2 A_Pain;
+			Goto See;
+		Death:
+			VASS J 8 Bright;
+			VASS K 8 Bright A_Scream();
+			VASS L 7 Bright;
+			VASS M 6 Bright A_Fall();
+			VASS NO 6 Bright;
+			VASS P 7 Bright;
+			VASS Q -1 A_BossDeath();
+			Stop;
+		Raise:
+			VASS P 8;
+			VASS ONMLKJ 8;
+			Goto See;
+	}
+	
+	action void A_VassAttack ()
+	{
+		A_CustomComboAttack ("VassagoFlame", 32.0, 10 * random(1, 8), "vassago/melee", "Melee");
+	}
+}
+
+Class VassagoFlame : Actor
+{
+	Default
+	{
+		Projectile;
+		Damage 5;
+		Speed 15;
+		FastSpeed 20;
+		Radius 6;
+		Height 16;
+		SeeSound "vassago/fire";
+		DeathSound "vassago/explode";
+		RenderStyle "Add";
+		Alpha 0.5;
+		Obituary "$OB_VASSAGO2";
+		DamageType "Fire";
+	}
+	States
+	{
+		Spawn:
+			VFLM AB 4 Bright;
+			Loop;
+			
+		Death:
+			VFLM C 0 Bright {
+				bNOGRAVITY = false;
+				A_ChangeLinkFlags (false);
+			}
+			VFLM C 4 Bright A_VassBurn();
+			VFLM DE 4 Bright;
+			VFLM F 4 Bright A_VassBurn();
+			VFLM GH 4 Bright;
+			VFLM F 4 Bright A_VassBurn();
+			VFLM GH 4 Bright;
+			VFLM F 4 Bright A_VassBurn();
+			VFLM GH 4 Bright;
+			VFLM F 4 Bright A_VassBurn();
+			VFLM GH 4 Bright;
+			VFLM F 4 Bright A_VassBurn();
+			VFLM GH 4 Bright;
+			VFLM F 4 Bright A_VassBurn();
+			VFLM GH 4 Bright;
+			VFLM F 4 Bright A_VassBurn();
+			VFLM GH 4 Bright;
+			VFLM I 4 Bright A_VassBurn();
+			VFLM JK 4 Bright;
+			VFLM L 4 Bright A_VassBurn();
+			VFLM MNOPQ 4 Bright;
+			Stop;
+	}
+	
+	action void A_VassBurn ()
+	{
+		A_StartSound ("vassago/shot");
+		A_Explode (10, 128.0, 0, damagetype:"Fire");
+	}
+}

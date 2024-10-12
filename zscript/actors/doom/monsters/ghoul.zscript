@@ -1,0 +1,80 @@
+Class Ghoul : Actor
+{
+
+	Default
+	{
+		Health 50;
+		Speed 12;
+		Radius 16;
+		Height 40;
+		ReactionTime 8;
+		PainChance 128;
+		Mass 50;
+		Monster;
+		+FLOAT;
+		+NOGRAVITY;
+		Tag "$TAG_GHOUL";
+		SeeSound "ghoul/sight";
+		ActiveSound "ghoul/active";
+		PainSound "ghoul/pain";
+		DeathSound "ghoul/death";
+		Obituary "$OB_GHOUL";
+		BloodColor "White";
+	}
+	
+	States
+	{
+		Spawn:
+			GHUL AB 10 A_Look;
+			loop;
+		See:
+			GHUL AABBCCBB 3 A_Chase;
+			loop;
+		Missile:
+			GHUL DE 4 Bright A_FaceTarget;
+			GHUL F 4 Bright A_SpawnProjectile("GhoulBall", 20.0);
+			GHUL G 4 Bright;
+			goto see;
+		Pain:
+			GHUL I 2 Bright;
+			GHUL J 2 Bright;
+			GHUL K 2 Bright A_Pain;
+			goto see;
+		Death:
+			GHUL L 5 Bright;
+			GHUL M 5 Bright A_Scream;
+			GHUL NO 5 Bright;
+			GHUL P 5 Bright A_Fall;
+			GHUL QR 5 Bright;
+			GHUL S -1;
+			stop;
+	}
+}
+
+Class GhoulBall : Actor
+{
+	Default
+	{
+		Projectile;
+		Damage 3;
+		Speed 15;
+		FastSpeed 20;
+		Radius 6;
+		Height 8;
+		RenderStyle "Translucent";
+		Alpha 0.5;
+		SeeSound "ghoul/shotf";
+		DeathSound "ghoul/shotx";
+	}
+	
+	States
+	{
+		Spawn:
+			GBAL AB 4 Bright;
+			Loop;
+		Death:
+			GBAL C 5 Bright;
+			APBX BCDE 5 Bright;
+			Stop;
+	}
+}
