@@ -151,16 +151,7 @@ Script "D2_MAP03_Open" Open
 			ReplaceTextures ("FWATER2", "NUKAGE1", 0);
 			ReplaceTextures ("FWATER3", "NUKAGE1", 0);
 			ReplaceTextures ("FWATER4", "NUKAGE1", 0);
-			ReplaceTextures ("GRASS2", "NUKAGE1", 0);
-			SpawnForced ("Revenant", 2368.0, 2756.0, 40.0, 0, 0);
-			SpawnForced ("PainElemental", 2320.0, 3232.0, 72.0, 0, 0);
-			Int CGG_ID1 = UniqueTID(0, 0);
-			SpawnForced ("ChaingunGuy", 2208.0, 3520.0, -64.0, CGG_ID1, 224);
-			SetActorFlag (CGG_ID1, "AMBUSH", true);
-			Int HK_ID1 = UniqueTID(0, 0);
-			SpawnForced ("HellKnight", 4304.0, 2880.0, 112.0, HK_ID1, 64);
-			SetActorFlag (HK_ID1, "AMBUSH", true);
-			
+			ReplaceTextures ("GRASS2", "NUKAGE1", 0);	
 			
 			// Set a sublte reflection on all of the liquids
 			Sector_SetPlaneReflection (1, nukealpha, 0);
