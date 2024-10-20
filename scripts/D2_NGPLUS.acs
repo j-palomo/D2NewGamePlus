@@ -159,24 +159,16 @@ Script "D2_MAP03_Open" Open
 			Sector_SetPlaneReflection (13, nukealpha, 0);
 			Sector_SetPlaneReflection (14, nukealpha, 0);
 			Sector_SetPlaneReflection (19, nukealpha, 0);
-			Sector_SetPlaneReflection (21, nukealpha, 0);
-			Sector_SetPlaneReflection (22, nukealpha, 0);
-			Sector_SetPlaneReflection (23, nukealpha, 0);
-			Sector_SetPlaneReflection (24, nukealpha, 0);
-			Sector_SetPlaneReflection (25, nukealpha, 0);
-			Sector_SetPlaneReflection (26, nukealpha, 0);
-			Sector_SetPlaneReflection (27, nukealpha, 0);
-			Sector_SetPlaneReflection (28, nukealpha, 0);
-			Sector_SetPlaneReflection (29, nukealpha, 0);
-			Sector_SetPlaneReflection (30, nukealpha, 0);
-			Sector_SetPlaneReflection (31, nukealpha, 0);
-			Sector_SetPlaneReflection (32, nukealpha, 0);
-			Sector_SetPlaneReflection (33, nukealpha, 0);
-			Sector_SetPlaneReflection (34, nukealpha, 0);
-			Sector_SetPlaneReflection (35, nukealpha, 0);
-			Sector_SetPlaneReflection (36, nukealpha, 0);
-			Sector_SetPlaneReflection (37, nukealpha, 0);
-			Sector_SetPlaneReflection (38, nukealpha, 0);
+			int sec_id = 0;
+			for (sec_id = 21; sec_id <= 38; sec_id++)
+			{
+				Sector_SetPlaneReflection (sec_id, nukealpha, 0);
+			}
+			// Teleporters
+			for (sec_id = 39; sec_id <= 44; sec_id++)
+			{
+				Sector_SetPlaneReflection (sec_id, nukealpha, nukealpha);
+			}
 			
 			SetLineSpecial (27, Teleport, 0, 27, 0, 0, 0); // Change the teleport destination to the secret
 			SpawnForced ("TeleportDest", 2032.0, 3520.0, 0, 5, 0);

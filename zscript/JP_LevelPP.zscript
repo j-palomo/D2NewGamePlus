@@ -134,6 +134,12 @@ Extend Class NGPLUS_LevelPostProcessor
 					AddSectorTag (37, 36);
 					AddSectorTag (69, 37);
 					AddSectorTag (70, 38);
+					AddSectorTag (56, 39); // Teleporters
+					AddSectorTag (53, 40);
+					AddSectorTag (36, 41);
+					AddSectorTag (84, 42);
+					AddSectorTag (68, 43);
+					AddSectorTag (118, 44);
 					ClearLineIDs (528);
 					AddLineID(528, 27);
 					AddLineID(343, 5);
@@ -147,6 +153,13 @@ Extend Class NGPLUS_LevelPostProcessor
 					SpawnThing (T_PainElemental, (2688.0, 2944.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing (T_ChaingunGuy, (2208.0, 3520.0, 0), 270, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing (T_HellKnight, (4304.0, 2880.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Incinerator, (2032.0, 3616.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoSmall, (2032.0, 3648.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoSmall, (3360.0, 3440.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoSmall, (3360.0, 3280.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoSmall, (3616.0, 3440.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoSmall, (3616.0, 3280.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoLarge, (4560.0, 3072.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					break;
 				
 				
