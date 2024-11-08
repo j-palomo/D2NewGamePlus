@@ -111,7 +111,39 @@ Extend Class NGPLUS_LevelPostProcessor
 					SpawnPointLight ((700.0, 1528.0, 64.0), 255, 127, 127, 32); // Exit sign
 					SpawnPointLight ((928.0, 416.0, 0), 255, 127, 127, 64);
 					SpawnPointLight ((928.0, 416.0, 64.0), 255, 127, 127, 64);
-					
+					// Move the bars that require a red key
+					SetVertex (107, 1240.0, 1288.0);
+					SetVertex (108, 1240.0, 1280.0);
+					SetVertex (109, 1256.0, 1280.0);
+					SetVertex (110, 1256.0, 1288.0);
+					SetVertex (96, 1160.0, 1288.0);
+					SetVertex (98, 1160.0, 1280.0);
+					SetVertex (97, 1176.0, 1280.0);
+					SetVertex (95, 1176.0, 1288.0);
+					SetVertex (99, 1184.0, 1288.0);
+					SetVertex (100, 1184.0, 1280.0);
+					SetVertex (101, 1200.0, 1280.0);
+					SetVertex (102, 1200.0, 1288.0);
+					SetVertex (103, 1216.0, 1288.0);
+					SetVertex (104, 1216.0, 1280.0);
+					SetVertex (105, 1232.0, 1280.0);
+					SetVertex (106, 1232.0, 1288.0);
+					// Move the line that opens the loop path to the other side
+					SetLineSpecial (155, 0);
+					SetLineSpecial (25, 11, 11, 64);
+					SetLineActivation (25, SPAC_Cross);
+					// Move the keys
+					SetThingXY (44, 1176.0, 544.0); // Blue Key
+					SetThingXY (31, 928.0, 576.0); // Red Key
+					// Change door lock so we don't get trapped
+					SetLineSpecial (390, 13, 0, 16, 0, 129, 12);
+					SetLineSpecial (396, 13, 0, 16, 0, 129, 12);
+					SetWallTexture(415, Line.front, Side.mid, "DOORRED");
+					SetWallTexture(420, Line.front, Side.mid, "DOORRED");
+					SetWallTexture(416, Line.front, Side.mid, "DOORRED");
+					SetWallTexture(419, Line.front, Side.mid, "DOORRED");
+					// Add camera to see the new changes in action
+					SetVertex (273, 736.0, 1208.0);
 					break;
 				
 				Case '5e8679670469f92e15cf4219b5b98fef': // MAP03
