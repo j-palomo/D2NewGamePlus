@@ -1,1 +1,1 @@
-LOAD = "id24res.wad"
+LOAD = "id1-res.wad"

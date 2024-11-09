@@ -11,6 +11,7 @@ Class HandGun : DoomWeapon
 		+WEAPON.WIMPY_WEAPON
 		Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED";
 		Tag "$TAG_PISTOL";
+		Decal "BulletChip";
 	}
 	
 	States

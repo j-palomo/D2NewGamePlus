@@ -12,6 +12,7 @@ Class Unarmed : DoomWeapon
 		+WEAPON.NOAUTOSWITCHTO;
 		+WEAPON.CHEATNOTWEAPON;
 		+INVENTORY.UNDROPPABLE;
+		Decal "Fist";
 	}
 	
 	States

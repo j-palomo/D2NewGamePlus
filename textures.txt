@@ -1,0 +1,18 @@
+WallTexture "CAMTEXT1", 64, 64
+{
+	graphic "-noflat-", 0, 0
+	NoDecals
+}
+
+WallTexture "CAMTEXT2", 64, 64
+{
+	graphic "-noflat-", 0, 0
+	NoDecals
+}
+
+WallTexture "CAMSCRN1", 44, 27
+{
+	Patch "COMP1C_4", -6, -4
+	XScale 0.7852
+	YScale 0.4821
+}

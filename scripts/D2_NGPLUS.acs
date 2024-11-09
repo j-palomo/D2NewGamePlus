@@ -95,6 +95,7 @@ Script "D2_MAP02_Open" Open
 				ReplaceTextures ("FWATER4", "NUKAGE1", 0);
 				ReplaceTextures ("GRASS2", "NUKAGE1", 0);
 				
+				
 				// Set a sublte reflection on all of the liquids
 				Sector_SetPlaneReflection (3, nukealpha, 0);
 				Sector_SetPlaneReflection (6, nukealpha, 0);
@@ -117,6 +118,11 @@ Script "D2_MAP02_Open" Open
 				
 				SetLineSpecial (8, ACS_NamedExecuteWithResult, "MAP02_1stSwitch", DL1);
 				SetLineSpecial (3, ACS_NamedExecuteWithResult, "MAP02_2ndSwitch", DL2);
+				
+				SetCameraToTexture (1, "CAMTEXT1", 45);
+				SetCameraToTexture (2, "CAMTEXT2", 45);
+				TranslucentLine (6, 127, 0);
+				TranslucentLine (15, 127, 0);
 			}
 		}
 	}

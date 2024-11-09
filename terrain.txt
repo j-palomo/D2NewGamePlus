@@ -13,3 +13,4 @@ terrain Nuke
 floor NUKAGE1 Nuke
 floor NUKAGE2 Nuke
 floor NUKAGE3 Nuke
+floor NUKAGE4 Nuke

@@ -60,6 +60,7 @@
 	const T_Tyrant = 3012;
 	const T_TyrantBoss1 = 3013;
 	const T_TyrantBoss2 = 3014;
+	const T_SecurityCamera = 9025;
 	const T_PointLight = 9800;
 	const T_SpotLight = 9840;
 

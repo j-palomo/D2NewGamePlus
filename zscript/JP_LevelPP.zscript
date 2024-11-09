@@ -107,6 +107,7 @@ Extend Class NGPLUS_LevelPostProcessor
 					AddSectorTag (94, 22); // Teleporter in secret room
 					SetThingXY (85, 944.0, 912.0); // Stuck Shotgunner
 					SpawnThing (T_RadSuit, (1244.0, 1672.0, 0));
+					SpawnThing (T_RadSuit, (544.0, 728.0, 0));
 					SpawnThing (T_RadSuit, (1232.0, 480.0, 0));
 					SpawnPointLight ((700.0, 1528.0, 64.0), 255, 127, 127, 32); // Exit sign
 					SpawnPointLight ((928.0, 416.0, 0), 255, 127, 127, 64);
@@ -138,12 +139,22 @@ Extend Class NGPLUS_LevelPostProcessor
 					// Change door lock so we don't get trapped
 					SetLineSpecial (390, 13, 0, 16, 0, 129, 12);
 					SetLineSpecial (396, 13, 0, 16, 0, 129, 12);
-					SetWallTexture(415, Line.front, Side.mid, "DOORRED");
-					SetWallTexture(420, Line.front, Side.mid, "DOORRED");
-					SetWallTexture(416, Line.front, Side.mid, "DOORRED");
-					SetWallTexture(419, Line.front, Side.mid, "DOORRED");
+					SetWallTexture (415, Line.front, Side.mid, "DOORRED");
+					SetWallTexture (420, Line.front, Side.mid, "DOORRED");
+					SetWallTexture (416, Line.front, Side.mid, "DOORRED");
+					SetWallTexture (419, Line.front, Side.mid, "DOORRED");
 					// Add camera to see the new changes in action
 					SetVertex (273, 736.0, 1208.0);
+					SetWallTexture (313, Line.front, Side.mid, "CAMTEXT1");
+					SetWallTexture (133, Line.front, Side.mid, "CAMTEXT2");
+					SetWallTexture (315, Line.front, Side.mid, "CAMSCRN1");
+					SetWallTexture (135, Line.front, Side.mid, "CAMSCRN1");
+					uint MAP02_Cam1 = SpawnThing (T_SecurityCamera, (1232.0, 1584.0, 32.0), 150);
+					uint MAP02_Cam2 = SpawnThing (T_SecurityCamera, (896.0, 1584.0, 32.0), 30);
+					SetThingID (MAP02_Cam1, 1);
+					SetThingID (MAP02_Cam2, 2);
+					AddLineID (315, 6);
+					AddLineID (135, 15);
 					break;
 				
 				Case '5e8679670469f92e15cf4219b5b98fef': // MAP03
