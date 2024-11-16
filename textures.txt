@@ -9,10 +9,3 @@ WallTexture "CAMTEXT2", 64, 64
 	graphic "-noflat-", 0, 0
 	NoDecals
 }
-
-WallTexture "CAMSCRN1", 44, 27
-{
-	Patch "COMP03_5", -11, -7
-	XScale 0.7852
-	YScale 0.4821
-}

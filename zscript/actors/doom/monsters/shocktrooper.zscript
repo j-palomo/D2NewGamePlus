@@ -10,6 +10,7 @@ Class Shocktrooper : Actor
 		ReactionTime 8;
 		Painchance 30;
 		Mass 100;
+		+FLOORCLIP;
 		ActiveSound "shocktrooper/active";
 		PainSound "shocktrooper/pain";
 		DeathSound "shocktrooper/death";

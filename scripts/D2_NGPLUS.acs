@@ -143,6 +143,8 @@ Script "MAP02_2ndSwitch" (Int RedLight)
 	SpawnForced ("DynamicLight", 792.0, 1184.1, 72.0, GreenLight, 0);
 	SetThingSpecial (GreenLight, 0, 127, 255, 127, 24, 0);
 	Floor_LowerToHighest (3, 8, 128);
+	Int V_TID = UniqueTID();
+	SpawnForced ("Vassago", 784.0, 1816.0, 0, V_TID, 0);
 }
 
 Script "D2_MAP03_Open" Open

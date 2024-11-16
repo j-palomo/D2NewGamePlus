@@ -109,17 +109,16 @@ Extend Class NGPLUS_LevelPostProcessor
 					SpawnThing (T_RadSuit, (1244.0, 1672.0, 0));
 					SpawnThing (T_RadSuit, (544.0, 728.0, 0));
 					SpawnThing (T_RadSuit, (1232.0, 480.0, 0));
-					SpawnThing (T_Shocktrooper, (1056.0, 1680.0, 0), 270);
-					SpawnThing (T_Shocktrooper, (992.0, 1376.0, 0), 90);
-					SpawnThing (T_Vassago, (784.0, 1816.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH); 
+					SpawnThing (T_Shocktrooper, (1056.0, 1680.0, 0), 270, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Shocktrooper, (992.0, 1376.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing (T_Shotgun, (1088.0, 1936.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_PlasmaRifle, (992.0, 1360.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_Cell, (872.0, 1352.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_Cell, (1112.0, 1352.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_Chaingun, (512.0, 1200.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_Stimpack, (596.0, 1708.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
-					SpawnThing (T_Shocktrooper, (512.0, 1440.0, 0), 90);
-					SpawnThing (T_Shocktrooper, (512.0, 1200.0, 0), 90);
+					SpawnThing (T_Shocktrooper, (512.0, 1440.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Shocktrooper, (512.0, 1200.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnPointLight ((700.0, 1528.0, 64.0), 255, 127, 127, 32); // Exit sign
 					SpawnPointLight ((928.0, 416.0, 0), 255, 127, 127, 64);
 					SpawnPointLight ((928.0, 416.0, 64.0), 255, 127, 127, 64);
@@ -141,6 +140,7 @@ Extend Class NGPLUS_LevelPostProcessor
 					SetVertex (105, 1232.0, 1280.0);
 					SetVertex (106, 1232.0, 1288.0);
 					// Move the line that opens the loop path to the other side
+					AddLineID (25, 16);
 					SetLineSpecial (155, 0);
 					SetLineSpecial (25, 11, 11, 64);
 					SetLineActivation (25, SPAC_Cross);
