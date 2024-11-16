@@ -155,7 +155,6 @@ Extend Class NGPLUS_LevelPostProcessor
 					SetWallTexture (416, Line.front, Side.mid, "DOORRED");
 					SetWallTexture (419, Line.front, Side.mid, "DOORRED");
 					// Add camera to see the new changes in action
-					SetVertex (273, 736.0, 1208.0);
 					SetWallTexture (313, Line.front, Side.mid, "CAMTEXT1");
 					SetWallTexture (133, Line.front, Side.mid, "CAMTEXT2");
 					SetWallTexture (315, Line.front, Side.mid, "CAMSCRN1");

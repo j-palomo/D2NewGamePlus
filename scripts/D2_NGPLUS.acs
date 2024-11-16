@@ -95,7 +95,6 @@ Script "D2_MAP02_Open" Open
 				ReplaceTextures ("FWATER4", "NUKAGE1", 0);
 				ReplaceTextures ("GRASS2", "NUKAGE1", 0);
 				
-				
 				// Set a sublte reflection on all of the liquids
 				Sector_SetPlaneReflection (3, nukealpha, 0);
 				Sector_SetPlaneReflection (6, nukealpha, 0);
