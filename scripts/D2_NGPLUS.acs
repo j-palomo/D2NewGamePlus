@@ -13,24 +13,6 @@ Function Bool CheckMapMD5 (str MD5, str mapname)
 	return md5_match;
 }
 
-Script "D2_AllMaps_Enter" Enter
-{
-	If (GameSkill () >= 5)
-	{
-		If (CheckInventory ("Fist"))
-		{
-			GiveInventory ("Unarmed", 1);
-			TakeInventory ("Fist", 1);
-		}
-		
-		If (CheckInventory ("Pistol"))
-		{
-			GiveInventory ("HandGun", 1);
-			TakeInventory ("Pistol", 1);
-		}
-	}
-}
-
 Script "D2_MAP30_Open" Open
 {
 	If (CheckMapMD5 ("5eecd88f4491f516d590ce4bbf45f532", "MAP30"))
