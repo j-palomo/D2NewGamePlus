@@ -263,7 +263,7 @@ Extend Class NGPLUS_LevelPostProcessor
 					
 				Case '5eecd88f4491f516d590ce4bbf45f532': // MAP30
 					SetLineVertexes (55, 10, 26); // remove the dumb console error
-					SetSectorTexture (0, sector.floor, "NUKAGE4"); // Make the floor match the walls
+					SetSectorTexture (0, sector.floor, "NUKAGE1"); // Make the floor match the walls
 					SpawnThing (T_Incinerator, (2848.0, -928.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH); // Give new weapons
 					SpawnThing (T_HeatWave, (2848.0, -992.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_FuelAmmoLarge, (2784.0, -800.0, 0), 0);
