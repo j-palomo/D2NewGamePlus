@@ -1,0 +1,82 @@
+Class Splash_Base : Actor
+{
+	Default
+	{
+		+DONTSPLASH;
+		+NOBLOCKMAP;
+		+MISSILE;
+		+DROPOFF;
+		+NOTELEPORT;
+		+DONTBLAST;
+		+CANNOTPUSH;
+		Height 4;
+		Radius 2;
+	}
+	
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 1 A_SpawnSplashParticles ("000000");
+			Goto Death;
+		Death:
+			TNT1 A 1;
+			Stop;
+	}
+	
+	Action void A_SpawnSplashParticles (color color1, color color2 = -1, color color3 = -1, Int numpart = 3)
+	{
+		If (color2 == -1) color2 = color1;
+		If (color3 == -1) color3 = color1;
+		For (Int i = 0; i < numpart; i++)
+		{
+			A_SpawnParticle(color1, SPF_LOCAL_ANIM, TICRATE, 4, 0, 0, 0, 0, FRandom(-8.0, 8.0), FRandom(-8.0, 8.0), FRandom(2.0, 5.0), 0, 0, -0.5);
+			A_SpawnParticle(color2, SPF_LOCAL_ANIM, TICRATE, 3, 0, 0, 0, 0, FRandom(-8.0, 8.0), FRandom(-8.0, 8.0), FRandom(2.0, 5.0), 0, 0, -0.5);
+			A_SpawnParticle(color3, SPF_LOCAL_ANIM, TICRATE, 3, 0, 0, 0, 0, FRandom(-8.0, 8.0), FRandom(-8.0, 8.0), FRandom(2.0, 5.0), 0, 0, -0.5);
+		}
+	}
+}
+
+Class Splash_Water : Splash_Base
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 1 A_SpawnSplashParticles ("000083", "00009b", "00006b");
+			Goto Death;
+	}
+}
+
+Class Splash_Water_Large : Splash_Base
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 1 A_SpawnSplashParticles ("000083", "00009b", "00006b", 8);
+			Goto Death;
+	}
+}
+
+Class Splash_Nuke : Splash_Base
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 1 A_SpawnSplashParticles ("008300", "009b00", "006b00");
+			Goto Death;
+	}
+}
+
+Class Splash_Nuke_Large : Splash_Base
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 1 A_SpawnSplashParticles ("008300", "009b00", "006b00", 8);
+			Goto Death;
+	}
+}

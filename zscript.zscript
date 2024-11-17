@@ -4,6 +4,8 @@ version "4.10"
 #include "zscript/JP_constants.zscript"
 #include "zscript/JP_LevelPP.zscript"
 
+#include "zscript/actors/doom/world/terrain.zscript"
+
 #include "zscript/actors/doom/player/player.zscript"
 
 #include "zscript/actors/doom/items/ammo.zscript"

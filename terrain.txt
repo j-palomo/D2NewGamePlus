@@ -1,4 +1,18 @@
 //Terrains
+// Define the splashes first. Not sure if this is a bug, but if you defined it after the terrain, it doesn't spawn the particles
+Splash Nukage
+{
+	BaseClass Splash_Nuke_Large
+	SmallClass Splash_Nuke
+	noalert
+}
+
+Splash Water
+{
+	BaseClass Splash_Water_Large
+	SmallClass Splash_Water
+	noalert
+}
 
 terrain Nuke
 {
@@ -8,9 +22,22 @@ terrain Nuke
 	DamageType Slime
 	DamageTimeMask 31
 	AllowProtection
+	Splash Nukage
+	StepDistance 8
+}
+
+terrain Water
+{
+	Footclip 10
+	Liquid
+	Splash Water
+	StepDistance 8
 }
 
 floor NUKAGE1 Nuke
 floor NUKAGE2 Nuke
 floor NUKAGE3 Nuke
-floor NUKAGE4 Nuke
+floor FWATER1 Water
+floor FWATER2 Water
+floor FWATER3 Water
+floor FWATER4 Water

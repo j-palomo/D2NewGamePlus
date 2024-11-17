@@ -96,6 +96,7 @@ Script "D2_MAP02_Open" Open
 				ReplaceTextures ("GRASS2", "NUKAGE1", 0);
 				
 				// Set a sublte reflection on all of the liquids
+				
 				Sector_SetPlaneReflection (3, nukealpha, 0);
 				Sector_SetPlaneReflection (6, nukealpha, 0);
 				Sector_SetPlaneReflection (8, nukealpha, 0);
@@ -107,6 +108,7 @@ Script "D2_MAP02_Open" Open
 				Sector_SetPlaneReflection (20, nukealpha, 0);
 				Sector_SetPlaneReflection (21, nukealpha, 0);
 				Sector_SetPlaneReflection (22, nukealpha, nukealpha);
+				
 				
 				Int DL1 = UniqueTID(0, 0);
 				SpawnForced ("DynamicLight", 1208.0, 1184.1, 88.0, DL1, 0);
