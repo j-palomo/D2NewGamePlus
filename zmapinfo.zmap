@@ -2,6 +2,8 @@
 GameInfo
 {
 	StatusBarClass = "LoR_DoomStatusBar"
+	PlayerClasses = "NewGamePLusPLayer"
+	QuitSound = "menu/quit3"
 }
 
 Skill NewGamePlus
@@ -11,7 +13,7 @@ Skill NewGamePlus
 	SpawnMulti
 	Name = "New Game+"
 	NoMenu
-	
+	DefaultSkill
 }
 
 DoomEdNums

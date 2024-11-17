@@ -125,5 +125,5 @@ tyrant/death				DSTYRDTH
 tyrant/active				DSDMACT
 
 
-
+$random menu/quit3 { shocktrooper/death tyrant/sight vassago/pain shocktrooper/death banshee/active ghoul/sight vassago/attack weapons/heatwave/charge }
 
