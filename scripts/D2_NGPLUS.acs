@@ -15,9 +15,12 @@ Function Bool CheckMapMD5 (str MD5, str mapname)
 
 Script "D2_MAP30_Open" Open
 {
-	If (CheckMapMD5 ("5eecd88f4491f516d590ce4bbf45f532", "MAP30"))
+	If (GetLevelInfo (LEVELINFO_LEVELNUM) == 30)
 	{
-		SetThingSpecial (1, ACS_NamedExecuteAlways, "D2_MAP30_End", 0);
+		If (CheckMapMD5 ("5eecd88f4491f516d590ce4bbf45f532", "MAP30"))
+		{
+			SetThingSpecial (1, ACS_NamedExecuteAlways, "D2_MAP30_End", 0);
+		}
 	}
 }
 
@@ -234,6 +237,20 @@ Script "D2_MAP07_Open" Open
 	}
 }
 
+
+Script "D2_MAP19_Open" Open
+{
+	If (GameSkill () >= 5)
+	{
+		If (GetLevelInfo (LEVELINFO_LEVELNUM) == 19)
+		{
+			If (CheckMapMD5 ("b5506b1e8f2fc272ad0c77b9e0df5491", "MAP19"))
+			{
+				
+			}
+		}
+	}
+}
 
 Script "D2_MAP31_Open" Open
 {
