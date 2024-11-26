@@ -63,6 +63,7 @@
 	const T_SecurityCamera = 9025;
 	const T_PointLight = 9800;
 	const T_SpotLight = 9840;
+	const T_SecActEnter = 9998;
 
 Class NGPLUS_LevelPostProcessor : LevelCompatibility
 {

@@ -260,7 +260,26 @@ Extend Class NGPLUS_LevelPostProcessor
 					SetSectorSpecial (23, 1024); // Make this the secret instead
 					SetSectorSpecial (1, 0); // Remove this secret
 					break;
-					
+				
+					Case 'b5506b1e8f2fc272ad0c77b9e0df5491': // MAP19
+					SetLineVertexes (636, 520, 517); // Fix the broken line
+					ClearLineSpecial (957);
+					ClearLineSpecial (960);
+					ClearLineSpecial (958);
+					ClearLineSpecial (959);
+					ClearLineIDs (957);
+					AddLineID (957, 27);
+					AddLineID (502, 28);
+					SetLineSpecial (957, 156, 28, 27, 0, 1); // Makes the destination visible through the portal
+					SetLineSpecial (958, 156, 28, 27, 0, 1);
+					SetLineSpecial (959, 156, 28, 27, 0, 1);
+					SetLineSpecial (960, 156, 28, 27, 0, 1);
+					FlipLineCompletely (502);
+					uint Tele_botleft = SpawnThing (T_SecActEnter, (-2656.0, 2656.0, 0));
+					SetThingSpecial (Tele_botleft, 70);
+					SetThingArgument (Tele_botleft, 1, 10);
+					break;
+				
 				Case '5eecd88f4491f516d590ce4bbf45f532': // MAP30
 					SetLineVertexes (55, 10, 26); // remove the dumb console error
 					SetSectorTexture (0, sector.floor, "NUKAGE1"); // Make the floor match the walls
