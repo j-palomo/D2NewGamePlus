@@ -94,4 +94,9 @@ Class NGPLUS_LevelPostProcessor : LevelCompatibility
 		SetThingID (SpawnedLight, tid);
 		return SpawnedLight;
 	}
+	
+	protected void SetWallXScale(int line, int side, int texpart, double scale)
+	{
+		level.lines[line].sidedef[side].SetTextureXScale(texpart, scale);
+	}
 }
