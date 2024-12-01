@@ -122,6 +122,11 @@ Extend Class NGPLUS_LevelPostProcessor
 					SpawnPointLight ((700.0, 1528.0, 64.0), 255, 127, 127, 32); // Exit sign
 					SpawnPointLight ((928.0, 416.0, 0), 255, 127, 127, 64);
 					SpawnPointLight ((928.0, 416.0, 64.0), 255, 127, 127, 64);
+					// Close the gap so you can't see the other side
+					SetVertex (185, 1040.0, 1080.0);
+					SetVertex (187, 1016.0, 1080.0);
+					SetWallXScale (200, Line.front, Side.top, 2.0);
+					SetWallXScale (204, Line.front, Side.top, 2.0);
 					// Move the bars that require a red key
 					SetVertex (107, 1240.0, 1288.0);
 					SetVertex (108, 1240.0, 1280.0);
