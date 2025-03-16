@@ -1,0 +1,12 @@
+npp_console local ?
+npp_saveall
+set local d ~ direxists "$(CURRENT_DIRECTORY)\acs"
+if $(d) == 0 then
+cmd /c mkdir "$(CURRENT_DIRECTORY)\acs"
+endif
+acc "$(CURRENT_DIRECTORY)\scripts\D2_NGPLUS.acs" "$(CURRENT_DIRECTORY)\acs\D2_NGPLUS.o"
+If $(EXITCODE) == 0
+7z a -tzip "D2NewGamePlus.pk3" *.txt* *.zmap *.zscript* acs\ brightmaps\ graphics\ scripts\ textures\ zscript\ LICENSE
+else
+npp_console 1
+endif
