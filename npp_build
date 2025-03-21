@@ -1,10 +1,14 @@
 npp_console local ?
 npp_saveall
-set local d ~ direxists "$(CURRENT_DIRECTORY)\acs"
+// Below is an example to put in the script window before calling this file
+// cd "C:\Program Files (x86)\GOG Galaxy\Games\Doom\WADs\D2NewGamePlus\"
+// npp_exec npp_build
+
+set local d ~ direxists "$(CWD)\acs"
 if $(d) == 0 then
-cmd /c mkdir "$(CURRENT_DIRECTORY)\acs"
+cmd /c mkdir "$(CWD)\acs"
 endif
-acc "$(CURRENT_DIRECTORY)\scripts\D2_NGPLUS.acs" "$(CURRENT_DIRECTORY)\acs\D2_NGPLUS.o"
+acc "$(CWD)\scripts\D2_NGPLUS.acs" "$(CWD)\acs\D2_NGPLUS.o"
 If $(EXITCODE) == 0
 7z a -tzip "D2NewGamePlus.pk3" *.txt* *.zmap *.zscript* acs\ brightmaps\ graphics\ scripts\ textures\ zscript\ LICENSE
 else
