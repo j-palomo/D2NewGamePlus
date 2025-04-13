@@ -1,8 +1,8 @@
 	// Change these 4 constants if the final editor numbers for the weapons is decided
-	const T_FuelAmmoSmall = 3200;
-	const T_FuelAmmoLarge = 3201;
-	const T_Incinerator = 3202;
-	const T_Heatwave = 3203;
+	const T_FuelAmmoSmall = -28622;
+	const T_FuelAmmoLarge = -28621;
+	const T_Incinerator = -28619;
+	const T_Heatwave = -28620;
 	//
 	const SKILLS_NIGHTMARE = 16;
 	const T_SpiderMastermind = 7;
