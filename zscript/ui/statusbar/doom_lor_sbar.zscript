@@ -132,7 +132,7 @@ class LoR_DoomStatusBar : BaseStatusBar
 			DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 187), DI_TEXT_ALIGN_RIGHT);
 			DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 187), DI_TEXT_ALIGN_RIGHT);
 			
-			[amt1, maxamt] = GetAmount("Fuel");
+			[amt1, maxamt] = GetAmount("ID24Fuel");
 			DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 193), DI_TEXT_ALIGN_RIGHT);
 			DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 193), DI_TEXT_ALIGN_RIGHT);
 		}

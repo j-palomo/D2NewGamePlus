@@ -8,8 +8,6 @@ version "4.10"
 
 #include "zscript/actors/doom/player/player.zscript"
 
-#include "zscript/actors/doom/items/ammo.zscript"
-
 #include "zscript/actors/doom/items/weaponincinerator.zscript"
 #include "zscript/actors/doom/items/weaponheatwave.zscript"
 #include "zscript/actors/doom/items/weaponfist.zscript"

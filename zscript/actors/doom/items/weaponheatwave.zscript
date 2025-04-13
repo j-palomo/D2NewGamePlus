@@ -1,14 +1,13 @@
-Class Heatwave : Weapon
+Class Heatwave : ID24CalamityBlade replaces ID24CalamityBlade
 {
 	Default
 	{
 		Weapon.SlotNumber 9;
-		Weapon.AmmoType "Fuel";
+		Weapon.AmmoType "ID24Fuel";
 		Weapon.AmmoUse 5;
 		Weapon.AmmoGive 20;
 		Inventory.PickupMessage "$ID24_GOTCALAMITYBLADE";
 		+Weapon.NoAutoAim; // Not actually defined on the original weapon. A workaround was used to avoid autoaim in LoR
-		Tag "$TAG_CALAMITYBLADE";
 	}
 	Action void A_ConsumeAmmo()
 	{

@@ -1,13 +1,12 @@
-Class Incinerator : Weapon
+Class Incinerator : ID24Incinerator replaces ID24Incinerator
 {
 	Default
 	{
 		Weapon.SlotNumber 8;
-		Weapon.AmmoType "Fuel";
+		Weapon.AmmoType "ID24Fuel";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 20;
 		Inventory.PickupMessage "$ID24_GOTINCINERATOR";
-		Tag "$TAG_INCINERATOR";
 	}
 	
 	States
