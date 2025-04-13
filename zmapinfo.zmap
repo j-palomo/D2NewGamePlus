@@ -18,7 +18,6 @@ Skill NewGamePlus
 
 DoomEdNums
 {
-	3006 = "Ghoul" // replaces lost soul placed on map, but not from spawning from pain elemental
 	3007 = "Ghoul"
 	3008 = "Banshee"
 	3009 = "Mindweaver"
