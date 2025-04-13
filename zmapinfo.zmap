@@ -27,8 +27,8 @@ DoomEdNums
 	3012 = "Tyrant"
 	3013 = "TyrantBoss1"
 	3014 = "TyrantBoss2"
-	3200 = "FuelAmmoSmall"
-	3201 = "FuelAmmoLarge"
-	3202 = "Incinerator"
-	3203 = "Heatwave"
+	-28622 = "FuelAmmoSmall"
+	-28621 = "FuelAmmoLarge"
+	-28619 = "Incinerator"
+	-28620 = "Heatwave"
 }
