@@ -5,8 +5,10 @@
 	const T_Heatwave = -28620;
 	//
 	const SKILLS_NIGHTMARE = 16;
+	const T_BlueKeyCard = 5;
 	const T_SpiderMastermind = 7;
 	const T_ShotgunGuy = 9;
+	const T_RedKeyCard = 13;
 	const T_Cyberdemon = 16;
 	const T_CellPack = 17;
 	const T_Spectre = 58;
@@ -14,7 +16,7 @@
 	const T_ChaingunGuy = 65;
 	const T_Revenant = 66;
 	const T_Fatso = 67;
-	const T_Arachnotron = 68;
+	const T_Arachnotron = 68; 
 	const T_HellKnight = 69; // nice
 	const T_PainElemental = 71;
 	const T_WolfensteinSS = 84;

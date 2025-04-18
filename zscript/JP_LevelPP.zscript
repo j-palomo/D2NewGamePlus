@@ -46,25 +46,29 @@ Extend Class NGPLUS_LevelPostProcessor
 					SpawnThing(T_Revenant, (384.0, 1376.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing(T_Revenant, (992.0, 1088.0, 0), 270, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing (T_Incinerator, (-48.0, 664.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
-					SpawnThing (T_Chaingunguy, (608.0, 1600.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
-					SpawnThing (T_Shell, (-224.0, 928.0, 8.0));
-					SpawnThing (T_Shell, (96.0, 928.0, 8.0));
-					SpawnThing (T_Shell, (384.0, 1472.0, 56.0));
-					SpawnThing (T_Clip, (384.0, 1408.0, 56.0));
-					SpawnThing (T_Shell, (384.0, 1344.0, 56.0));
-					SpawnThing (T_Clip, (384.0, 1280.0, 56.0));
-					SpawnThing (T_Stimpack, (384.0, 1024.0, 56.0));
-					SpawnThing (T_Shell, (192.0, 1728.0, 56.0));
-					SpawnThing (T_Stimpack, (384.0, 1856.0, 48.0));
-					SpawnThing (T_RocketLauncher, (1248.0, 384.0, -32.0));
-					SpawnThing (T_RocketAmmo, (1242.0, 388.0, -32.0));
-					SpawnThing (T_RocketAmmo, (1256.0, 386.0, -32.0));
-					SpawnThing (T_FuelAmmoSmall, (1184.0, 608.0, 40.0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
-					SpawnThing (T_Shell, (928.0, 736.0, 72.0));
-					SpawnThing (T_Shotgun, (640.0, 800.0, 56.0));
-					SpawnThing (T_Shotgun, (-96.0, 784.0, 56.0));
+					SpawnThing (T_TyrantBoss1, (608.0, 1600.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Demon, (-224.0, 864.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Vassago, (192.0, 2400.0, 0), 270, MTF_SINGLE|MTF_COOPERATIVE);
+					SpawnThing (T_Shell, (-224.0, 928.0, 0));
+					SpawnThing (T_Shell, (96.0, 928.0, 0));
+					SpawnThing (T_Shell, (384.0, 1472.0, 0));
+					SpawnThing (T_Clip, (384.0, 1408.0, 0));
+					SpawnThing (T_Shell, (384.0, 1344.0, 0));
+					SpawnThing (T_Clip, (384.0, 1280.0, 0));
+					SpawnThing (T_Stimpack, (384.0, 1024.0, 0));
+					SpawnThing (T_Shell, (192.0, 1728.0, 0));
+					SpawnThing (T_Stimpack, (384.0, 1856.0, 0));
+					SpawnThing (T_RocketLauncher, (1248.0, 384.0, 0));
+					SpawnThing (T_RocketAmmo, (1242.0, 388.0, 0));
+					SpawnThing (T_RocketAmmo, (1256.0, 386.0, 0));
+					SpawnThing (T_FuelAmmoSmall, (1184.0, 608.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_Shell, (928.0, 736.0, 0));
+					SpawnThing (T_Shotgun, (640.0, 800.0, 0));
+					SpawnThing (T_Shotgun, (-96.0, 784.0, 0));
+					SpawnThing (T_Incinerator, (-336.0, 656.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_Shocktrooper, (416.0, 672.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing (T_Shocktrooper, (928.0, 736.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Archvile, (1248.0, 864.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					// Extra lighting
 					SpawnPointLight ((-128.0, 1376.0, 124.0), 255, 255, 127, 24);
 					SpawnPointLight ((0, 1376.0, 124.0), 255, 255, 127, 24);
@@ -85,7 +89,6 @@ Extend Class NGPLUS_LevelPostProcessor
 					SpawnPointLight ((20.0, 1056.0, 124.0), 255, 255, 127, 24);
 					SpawnPointLight ((448.0, 1056.0, 124.0), 255, 255, 127, 24);
 					SpawnPointLight ((992.0, 1036.0, 112.0), 255, 127, 127, 24);
-					SpawnPointLight ((-64.0, 664.0, 16.0), 127, 255, 127, 24, 2); // This gets deactivated by a script later
 					// Line horizon for outdoor area
 					SetLineSpecial (304, 9);
 					SetLineSpecial (305, 9);
@@ -93,6 +96,30 @@ Extend Class NGPLUS_LevelPostProcessor
 					SetLineSpecial (307, 9);
 					// Raise the wall on the outdoor area near spawn
 					OffsetSectorPlane (12, sector.floor, 64);
+					// Make the starting area a lift so players can get back up.
+					SetLineActivation (8, SPAC_Use);
+					SetWallTexture (354, Line.front, Side.bottom, "BRONZE1");
+					SetLineFlags (8, Line.ML_REPEAT_SPECIAL, 0);
+					SetLineSpecial (8, 62, 0, 32, 105);
+					// Allow the door to be opened from outside
+					SetWallTexture (194, Line.front, Side.top, "BIGDOOR5");
+					SetLineActivation (194, SPAC_Use);
+					SetLineSpecial (194, 11, 0, 16, 0);
+					SetLineFlags (194, 0, Line.ML_DONTPEGTOP);
+					// Outside sector is no longer a secret
+					SetSectorSpecial (17, 0);
+					// You can now jump out of the window
+					SetLineFlags (151, 0, Line.ML_BLOCKING);
+					SetLineFlags (199, 0, Line.ML_BLOCKING);
+					// Exit door now requires a key which can be found in the optional side area
+					SetWallTexture (130, Line.front, Side.mid, "DOORRED");
+					SetWallTexture (134, Line.front, Side.mid, "DOORRED");
+					SetLineSpecial (166, 13, 0, 16, 150, 1, 0);
+					// Optional side area is no longer optional
+					SetLineSpecial (47, 13, 0, 16, 0, 2, 0);
+					// Spawn keys
+					SpawnThing (T_RedKeyCard, (96.0, 2400.0, 0));
+					SpawnThing (T_BlueKeyCard, (640.0, 128.0, 0));
 					break;
 					
 				Case 'ab24ae6e2cb13cbdd04600a4d37f9189': // MAP02

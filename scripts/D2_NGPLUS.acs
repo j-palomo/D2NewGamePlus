@@ -49,21 +49,10 @@ Script "D2_MAP01_Open" Open
 				Sector_SetFade (1, 45, 25, 10);
 				SetFogDensity (7, 400);
 				Sector_SetFade (7, 45, 25, 10);
-				SetLineSpecial (2, ACS_NamedExecuteAlways, "D2_MAP01_SecretSwitch", 0, 2);
 			}
 		}
 	}
 }
-
-Script "D2_MAP01_SecretSwitch" (Int GreenLight)
-{
-	Thing_Deactivate (GreenLight);
-	Int RedLight = UniqueTID();
-	SpawnForced ("PointLight", -64.0, 664.0, 152.0, RedLight, 0);
-	SetThingSpecial (RedLight, 0, 255, 127, 127, 32, 0);
-	Door_Open (2, 16, 0);
-}
-
 
 Script "D2_MAP02_Open" Open
 {
