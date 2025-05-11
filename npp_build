@@ -4,13 +4,26 @@ npp_saveall
 // cd "C:\Program Files (x86)\GOG Galaxy\Games\Doom\WADs\D2NewGamePlus\"
 // npp_exec npp_build
 
-set local d ~ direxists "$(CWD)\acs"
+set local d ~ direxists "$(CWD)\Levels\acs"
 if $(d) == 0 then
-cmd /c mkdir "$(CWD)\acs"
+cmd /c mkdir "$(CWD)\Levels\acs"
 endif
+
+cd "$(CWD)\Levels\"
 acc "$(CWD)\scripts\D2_NGPLUS.acs" "$(CWD)\acs\D2_NGPLUS.o"
 If $(EXITCODE) == 0
-7z a -tzip "D2NewGamePlus.pk3" *.txt* *.zmap *.zscript* acs\ brightmaps\ graphics\ scripts\ textures\ zscript\ LICENSE
+7z a -tzip "D2NewGamePlus_Levels.pk3" *.txt* *.zmap *.zscript* acs\ brightmaps\ graphics\ scripts\ textures\ zscript\
+If $(EXITCODE) == 0
+cmd /c move "D2NewGamePlus_Levels.pk3" ".."
+else
+npp_console 1
+endif
+endif
+cd ".."
+cd "$(CWD)\Weapons\"
+7z a -tzip "D2NewGamePlus_Weapons.pk3" *.txt* *.zmap *.zscript* acs\ brightmaps\ graphics\ scripts\ textures\ zscript\
+If $(EXITCODE) == 0
+cmd /c move "D2NewGamePlus_Weapons.pk3" ".."
 else
 npp_console 1
 endif
