@@ -1,8 +1,6 @@
-
 GameInfo
 {
 	StatusBarClass = "LoR_DoomStatusBar"
-	PlayerClasses = "NewGamePLusPLayer"
 	QuitSound = "menu/quit3"
 }
 
