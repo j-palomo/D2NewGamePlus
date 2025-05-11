@@ -41,7 +41,7 @@ Class HandGun : DoomWeapon
 	
 	Action Void A_FireHandGun ()
 	{
-		int dmg = random (15, 20);
+		int dmg = random (3, 5) * 5;
 		A_FireBullets (2.0, 2.0, 1, dmg, "BulletPuff", FBF_USEAMMO|FBF_NORANDOM);
 		A_StartSound("weapons/pistol", CHAN_WEAPON);
 		A_GunFlash();
