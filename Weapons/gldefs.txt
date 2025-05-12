@@ -1,3 +1,123 @@
+flickerlight HEATWAVE1
+{
+    color 0.91 0.596 0.379
+    size 96
+    secondarySize 128
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight HEATWAVE2
+{
+    color 0.91 0.596 0.379
+    size 128
+    secondarySize 160
+    chance 0.5
+	attenuate 1
+}
+
+flickerlight HEATWAVE3
+{
+    color 0.95 0.5 0.2
+    size 96
+    secondarySize 128
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight HEATWAVE4
+{
+    color 0.75 0.35 0.15
+    size 64
+    secondarySize 96
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight HEATWAVE5
+{
+    color 0.5 0.28 0.11
+    size 48
+    secondarySize 80
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight INCIN1
+{
+    color 1.0 0.56 0.23
+    size 32
+    secondarySize 64
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight INCIN2
+{
+    color 1.0 0.56 0.23
+    size 48
+    secondarySize 96
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight INCIN3
+{
+    color 1.0 0.56 0.23
+    size 64
+    secondarySize 128
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight INCIN4
+{
+    color 1.0 0.56 0.23
+    size 80
+    secondarySize 160
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight INCIN5
+{
+    color 1.0 0.56 0.23
+    size 96
+    secondarySize 192
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight INCIN6
+{
+    color 1.0 0.56 0.23
+    size 112
+    secondarySize 224
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight INCIN7
+{
+    color 0.5 0.28 0.12
+    size 32
+    secondarySize 64
+    chance 0.3
+	attenuate 1
+}
+
+brightmap sprite FLMFA0
+{
+	map "brightmaps/FLMFA0.png"
+	disablefullbright
+}
+
+brightmap sprite FLMFB0
+{
+	map "brightmaps/FLMFB0.png"
+	disablefullbright
+}
+
 object HeatwaveRipper
 {
 	frame HETBA {light HEATWAVE1}
@@ -30,3 +150,4 @@ object IncineratorFlame
 	frame IFLMO {light INCIN3}
 	frame IFLMP {light INCIN7}
 }
+

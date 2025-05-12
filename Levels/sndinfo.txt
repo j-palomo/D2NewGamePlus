@@ -1,35 +1,4 @@
 //
-// Incinerator
-//
-weapons/incinerator/fire1	DSINCFI1
-weapons/incinerator/fire2	DSINCFI2
-weapons/incinerator/hit1	DSINCHT1
-weapons/incinerator/hit2	DSINCHT2
-weapons/incinerator/hit3	DSINCHT3
-weapons/incinerator/shot	DSINCBRN
-$random weapons/incinerator/fire {weapons/incinerator/fire1 weapons/incinerator/fire2}
-$random weapons/incinerator/hit {weapons/incinerator/hit1 weapons/incinerator/hit2} // 3 isn't random
-// Aliases
-incfi1 DSINCFI1 
-incfi2 DSINCFI2 
-incbrn DSINCBRN 
-incht1 DSINCHT1 
-incht2 DSINCHT2 
-incht3 DSINCHT3 
-
-//
-// Calamity Blade
-//
-weapons/heatwave/charge		DSHETCHG
-weapons/heatwave/fire		DSHETSHT
-weapons/heatwave/hit		DSHETXPL
-// Aliases
-hetchg DSHETCHG 
-hetsht DSHETSHT 
-hetxpl DSHETXPL 
-
-
-//
 // Ghoul
 //
 ghoul/sight				    DSGHLSIT
@@ -125,5 +94,5 @@ tyrant/death				DSTYRDTH
 tyrant/active				DSDMACT
 
 
-$random menu/quit3 { shocktrooper/death tyrant/sight vassago/pain shocktrooper/death banshee/active ghoul/sight vassago/attack weapons/heatwave/charge }
+$random menu/quit3 { shocktrooper/death tyrant/sight vassago/pain shocktrooper/head banshee/active ghoul/sight vassago/attack vassago/sight}
 
