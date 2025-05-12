@@ -1,4 +1,4 @@
-Class Incinerator : ID24Incinerator replaces ID24Incinerator
+Class Incinerator : DoomWeapon replaces ID24Incinerator
 {
 	Default
 	{

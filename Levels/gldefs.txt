@@ -58,7 +58,7 @@ flickerlight HEATWAVE5
 	attenuate 1
 }
 
-object HeatwaveRipper
+object ID24IncineratorProjectile
 {
 	frame HETBA {light HEATWAVE1}
 	frame HETBB {light HEATWAVE1}
@@ -134,7 +134,7 @@ flickerlight INCIN7
 	attenuate 1
 }
 
-object IncineratorFlame
+object ID24IncineratorFlame
 {
 	frame IFLMA {light INCIN1}
 	frame IFLMB {light INCIN2}

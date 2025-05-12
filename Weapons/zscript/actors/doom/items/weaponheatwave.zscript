@@ -1,4 +1,4 @@
-Class Heatwave : ID24CalamityBlade replaces ID24CalamityBlade
+Class Heatwave : DoomWeapon replaces ID24CalamityBlade
 {
 	Default
 	{

@@ -1,0 +1,32 @@
+object HeatwaveRipper
+{
+	frame HETBA {light HEATWAVE1}
+	frame HETBB {light HEATWAVE1}
+	frame HETBC {light HEATWAVE1}
+	frame HETBD {light HEATWAVE2}
+	frame HETBE {light HEATWAVE3}
+	frame HETBF {light HEATWAVE3}
+	frame HETBG {light HEATWAVE4}
+	frame HETBH {light HEATWAVE5}
+	frame HETBI {light HEATWAVE5}
+}
+
+object IncineratorFlame
+{
+	frame IFLMA {light INCIN1}
+	frame IFLMB {light INCIN2}
+	frame IFLMC {light INCIN3}
+	frame IFLMD {light INCIN4}
+	frame IFLME {light INCIN3}
+	frame IFLMF {light INCIN2}
+	frame IFLMG {light INCIN1}
+	frame IFLMH {light INCIN7}
+	frame IFLMI {light INCIN3}
+	frame IFLMJ {light INCIN4}
+	frame IFLMK {light INCIN5}
+	frame IFLML {light INCIN6}
+	frame IFLMM {light INCIN5}
+	frame IFLMN {light INCIN4}
+	frame IFLMO {light INCIN3}
+	frame IFLMP {light INCIN7}
+}

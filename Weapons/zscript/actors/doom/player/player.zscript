@@ -8,14 +8,5 @@ Class NewGamePLusPLayer : DoomPlayer
 		Player.StartItem "HandGun";
 		Player.StartItem "Unarmed";
 		Player.StartItem "Clip", 50;
-		Player.WeaponSlot 1, "Unarmed", "BuffedChainsaw";
-		Player.WeaponSlot 2, "HandGun";
-		Player.WeaponSlot 3, "Shotgun", "SuperShotgun";
-		Player.WeaponSlot 4, "Chaingun";
-		Player.WeaponSlot 5, "RocketLauncher";
-		Player.WeaponSlot 6, "PlasmaRifle";
-		Player.WeaponSlot 7, "BFG9000";
-		Player.WeaponSlot 8, "Incinerator";
-		Player.WeaponSlot 9, "Heatwave";
 	}
 }

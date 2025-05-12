@@ -1,0 +1,27 @@
+generator HeatwaveRipper HeatWaveScorch
+
+decal Fist1
+{
+	pic BFGLITE1
+	shade "00 00 00"
+	randomflipx
+	randomflipy
+	x-scale 0.25
+	y-scale 0.25
+}
+
+decal Fist2
+{
+	pic BFGLITE2
+	shade "00 00 00"
+	randomflipx
+	randomflipy
+	x-scale 0.25
+	y-scale 0.25
+}
+
+decalgroup Fist
+{
+	Fist1	1
+	Fist2	1
+}
