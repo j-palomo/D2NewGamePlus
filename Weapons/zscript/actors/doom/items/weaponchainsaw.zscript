@@ -1,5 +1,9 @@
 Class BuffedChainsaw : Chainsaw replaces Chainsaw
 {	
+	Default
+	{
+		Weapon.SlotNumber 1;
+	}
 	States
 	{
 		Fire:

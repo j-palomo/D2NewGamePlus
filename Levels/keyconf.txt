@@ -1,5 +1,0 @@
-weaponsection Doom2_ID24
-setslot 6 PlasmaRifle
-setslot 7 BFG9000
-setslot 8 ID24Incinerator
-setslot 9 ID24CalamityBlade

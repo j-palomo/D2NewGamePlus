@@ -4,6 +4,7 @@ Class Unarmed : DoomWeapon
 	{
 		Weapon.SelectionOrder 3700;
 		Weapon.Kickback 100;
+		Weapon.SlotNumber 1;
 		Obituary "$OB_MPFIST";
 		Tag "$TAG_FIST";
 		+WEAPON.WIMPY_WEAPON;
