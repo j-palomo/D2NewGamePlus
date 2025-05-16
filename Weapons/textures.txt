@@ -1,0 +1,5 @@
+Sprite "SHCSA0", 3, 7
+{
+	Offset 1, 7
+	Patch "SHELA0", 0, 0
+}
