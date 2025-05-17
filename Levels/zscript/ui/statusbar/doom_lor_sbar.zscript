@@ -124,7 +124,10 @@ class LoR_DoomStatusBar : BaseStatusBar
 			DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 175), DI_TEXT_ALIGN_RIGHT);
 			DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 175), DI_TEXT_ALIGN_RIGHT);
 			
-			[amt1, maxamt] = GetAmount("RocketAmmo");
+			String RocketAmmoReplacement = "RocketAmm0";
+			Class<Ammo> RAR = RocketAmmoReplacement;
+			If (RAR) [amt1, maxamt] = GetAmount(RocketAmmoReplacement);
+			Else [amt1, maxamt] = GetAmount("RocketAmmo");
 			DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 181), DI_TEXT_ALIGN_RIGHT);
 			DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 181), DI_TEXT_ALIGN_RIGHT);
 			
@@ -147,7 +150,10 @@ class LoR_DoomStatusBar : BaseStatusBar
 		DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 179), DI_TEXT_ALIGN_RIGHT);
 		DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 179), DI_TEXT_ALIGN_RIGHT);
 		
-		[amt1, maxamt] = GetAmount("RocketAmmo");
+		String RocketAmmoReplacement = "RocketAmm0";
+		Class<Ammo> RAR = RocketAmmoReplacement;
+		If (RAR) [amt1, maxamt] = GetAmount(RocketAmmoReplacement);
+		Else [amt1, maxamt] = GetAmount("RocketAmmo");
 		DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 185), DI_TEXT_ALIGN_RIGHT);
 		DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 185), DI_TEXT_ALIGN_RIGHT);
 		
