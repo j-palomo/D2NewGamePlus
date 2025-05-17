@@ -79,7 +79,7 @@ Class EmptyShotgunShell : Actor
 	
 	Override void PostBeginPlay()
 	{
-		rollspeed = random (16,64);
+		rollspeed = random (16,128);
 		decaytime = TICRATE*12;
 	}
 	
