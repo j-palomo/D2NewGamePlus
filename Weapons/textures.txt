@@ -3,3 +3,10 @@ Sprite "SHCSA0", 3, 7
 	Offset 1, 7
 	Patch "SHELA0", 0, 0
 }
+
+Sprite "ROCKB0", 17, 29
+{
+	Offset 8, 27
+	Patch "ROCKA0", 0, 0
+	Patch "ROCKA0", 5, 2
+}

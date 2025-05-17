@@ -1,4 +1,4 @@
-Class Minigun : DoomWeapon // replaces Chaingun
+Class Minigun : DoomWeapon replaces Chaingun
 {
 	Bool FireState; // Alternates between frame A and B, keeping the visual after you stop firing
 	Override void PostBeginPlay()

@@ -2,3 +2,4 @@
 GOTMINIGUN = "You got the minigun!";
 TAG_MINIGUN = "Minigun";
 OB_MPMINIGUN = "%o was mowed down by %k's minigun";
+GOTROCKETS = "Picked up a pair of rockets.";
