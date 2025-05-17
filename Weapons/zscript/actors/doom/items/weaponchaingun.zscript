@@ -1,0 +1,76 @@
+Class Minigun : DoomWeapon // replaces Chaingun
+{
+	Bool FireState; // Alternates between frame A and B, keeping the visual after you stop firing
+	Override void PostBeginPlay()
+	{
+		FireState = False;
+	}
+	
+	Default
+	{
+		Weapon.SelectionOrder 700;
+		Weapon.AmmoUse 1;
+		Weapon.AmmoGive 20;
+		Weapon.AmmoType "Clip";
+		Weapon.SlotNumber 4;
+		Inventory.PickupMessage "$GOTMINIGUN";
+		Obituary "$OB_MPMINIGUN";
+		Tag "$TAG_MINIGUN";
+	}
+	
+	States
+	{
+		Ready:
+			CHGG A 1 A_WeaponReady;
+			Loop;
+			
+		WeaponReady:
+			---- A 1 A_WeaponReady;
+			Loop;
+			
+		Deselect:
+			---- A 1 A_Lower;
+			Loop;
+			
+		Select:
+			CHGG A 1 A_Raise;
+			Loop;
+			
+		Fire:
+			---- A 0 A_JumpIf (invoker.FireState, "FireB");
+		FireA: // Intentional fall-through
+			CHGG A 4 {
+				A_FireMiniGun();
+				A_GunFlash("FlashA");
+				invoker.FireState = True;
+			}
+			CHGG B 0 A_ReFire ("FireB");
+			Goto WeaponReady;
+		FireB:
+			CHGG B 4 {
+				A_FireMiniGun();
+				A_GunFlash("FlashB");
+				invoker.FireState = False;
+			}
+			CHGG A 0 A_ReFire ("FireA");
+			Goto WeaponReady;
+			
+		FlashA:
+			CHGF A 4 Bright A_Light1;
+			Goto LightDone;
+			
+		FlashB:
+			CHGF B 4 Bright A_Light2;
+			Goto LightDone;
+			
+		Spawn:
+			MGUN A -1;
+			Stop;
+	}
+	
+	Action Void A_FireMiniGun ()
+	{
+		A_FireBullets (2.8, 2.8, -1, 8, "BulletPuff", FBF_USEAMMO); // Buffed damage, slight change to accuracy
+		A_StartSound("weapons/chngun", CHAN_WEAPON);
+	}
+}
