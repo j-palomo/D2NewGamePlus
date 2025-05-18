@@ -14,6 +14,30 @@ Skill NewGamePlus
 	DefaultSkill
 }
 
+Skill NewGamePlusPlus
+{
+	ACSReturn = 6
+	SpawnFilter = 5
+	SpawnMulti
+	Name = "New Game++"
+	NoMenu
+	FastMonsters
+}
+
+Skill NewGameMinus // More aggressive, but easier to kill
+{
+	ACSReturn = 7
+	SpawnFilter = 5
+	SpawnMulti
+	Name = "New Game-"
+	NoMenu
+	FastMonsters
+	NoPain
+	NoInfighting
+	MonsterHealth = 0.5
+	Aggressiveness = 0.5
+}
+
 DoomEdNums
 {
 	3007 = "Ghoul"

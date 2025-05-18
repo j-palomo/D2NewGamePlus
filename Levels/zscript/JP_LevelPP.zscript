@@ -2,18 +2,16 @@ Extend Class NGPLUS_LevelPostProcessor
 {
 	protected void Apply(Name checksum, String mapname)
     {
-		If (skill < 5)
+		If (skill <= 6)
 		{
 			Switch (checksum)
 			{
 				Case '5eecd88f4491f516d590ce4bbf45f532': // MAP30
 					SetThingID (0, 1); // Boss brain death special needs to be changed to warp to map01 after finishing the game
-//					SetThingSpecial (0, 80);
-//					SetThingArgument (0, 0, 30);
 					break;
 			}
 		}
-		If (skill == 5) // Hidden difficulty. Either use the console to set or beat the game once
+		If (skill >= 5) // Hidden difficulty. Either use the console to set or beat the game once
 		{
 			Switch (checksum)
 			{

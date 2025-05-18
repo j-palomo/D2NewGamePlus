@@ -26,14 +26,26 @@ Script "D2_MAP30_Open" Open
 
 Script "D2_MAP30_End" (void)
 {
-	If (GameSkill () <= 4)
+	Delay (100);
+	Switch (GameSkill ())
 	{
-		If (GetLevelInfo (LEVELINFO_LEVELNUM) == 30)
-		{
-			Delay (100);
+		Case 0:
+		Case 1:
+		Case 2:
+		Case 3:
+		Case 4:
 			ChangeLevel ("MAP01", 0, CHANGELEVEL_NOINTERMISSION, 5);
-		}
+			break;
+		
+		Case 5:
+			ChangeLevel ("MAP01", 0, CHANGELEVEL_NOINTERMISSION, 6);
+			break;
+		
+		Case 6:
+			ChangeLevel ("MAP01", 0, CHANGELEVEL_NOINTERMISSION, 7);
+			break;
 	}
+	
 }
 
 Script "D2_MAP01_Open" Open
