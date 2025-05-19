@@ -13,6 +13,11 @@ Function Bool CheckMapMD5 (str MD5, str mapname)
 	return md5_match;
 }
 
+Script "LogMapMD5" Open
+{
+	ScriptCall ("ACS_LogMapMD5", "LogMapMD5");
+}
+
 Script "D2_MAP30_Open" Open
 {
 	If (GetLevelInfo (LEVELINFO_LEVELNUM) == 30)

@@ -7,7 +7,20 @@ Class ACS_MapCheck
 		{
 			md5 = level.info.MapChecksum(MapName);
 		}
-//		Console.Printf(md5);
+		return md5;
+	}
+}
+
+Class ACS_LogMapMD5
+{
+	static string LogMapMD5 () // Returns the md5 for the map after you load it
+	{
+		string md5 = "";
+		If (level.info.MapExists (level.info.MapName))
+		{
+			md5 = level.info.MapChecksum(level.info.MapName);
+		}
+		Console.Printf(md5);
 		return md5;
 	}
 }
