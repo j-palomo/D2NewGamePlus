@@ -25,8 +25,8 @@ Class Incinerator : DoomWeapon replaces ID24Incinerator
 			Loop;
 		Fire:
 			FLMF A 1 Bright A_FireIncinerator();
-			FLMF B 1 Bright;
-			FLMG B 1;
+			FLMF B 1 Bright A_WeaponOffset (random(-1,1), random(33,35), WOF_INTERPOLATE);
+			FLMG B 1 A_WeaponOffset (0, 32, WOF_INTERPOLATE);
 			FLMG A 1 A_ReFire;
 			Goto Ready;
 		Flash:
@@ -40,6 +40,8 @@ Class Incinerator : DoomWeapon replaces ID24Incinerator
 		A_StartSound("weapons/incinerator/fire", CHAN_WEAPON);
 		A_FireProjectile("IncineratorFlame");
 		A_GunFlash ();
+		A_WeaponOffset (random(-1,1), random(34,37), WOF_INTERPOLATE);
+		A_Quake (0.5, 3, 0, 1, "");
 	}
 }
 
