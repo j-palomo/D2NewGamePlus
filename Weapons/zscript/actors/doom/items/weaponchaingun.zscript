@@ -1,6 +1,6 @@
 Class Minigun : DoomWeapon replaces Chaingun
 {
-	Bool FireState; // Alternates between frame A and B, keeping the visual after you stop firing
+	Bool FireState; // Alternates between frame A and B, keeping the visual after you stop firing or switch weapons
 	Override void PostBeginPlay()
 	{
 		FireState = False;
@@ -21,8 +21,17 @@ Class Minigun : DoomWeapon replaces Chaingun
 	States
 	{
 		Ready:
+			CHGG A 0 {
+				If (invoker.FireState) return ResolveState("ReadyB");
+				return ResolveState("ReadyA");
+			}
+			Goto WeaponReady;
+		ReadyA:
 			CHGG A 1 A_WeaponReady;
-			Loop;
+			Goto WeaponReady;
+		ReadyB:
+			CHGG B 1 A_WeaponReady;
+			Goto WeaponReady;
 			
 		WeaponReady:
 			---- A 1 A_WeaponReady;
@@ -33,7 +42,22 @@ Class Minigun : DoomWeapon replaces Chaingun
 			Loop;
 			
 		Select:
+			CHGG A 0 {
+				If (invoker.FireState) return ResolveState("SelectB");
+				return ResolveState("SelectA");
+			}
+			Goto WeaponRaise;
+		
+		SelectA:
 			CHGG A 1 A_Raise;
+			Goto WeaponRaise;
+			
+		SelectB:
+			CHGG B 1 A_Raise;
+			Goto WeaponRaise;
+			
+		WeaponRaise:
+			---- A 1 A_Raise;
 			Loop;
 			
 		Fire:

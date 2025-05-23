@@ -1,4 +1,4 @@
-Class HandGun : DoomWeapon
+Class HandGun : DoomWeapon replaces Pistol
 {
 	Default
 	{
