@@ -347,11 +347,6 @@ Extend Class NGPLUS_LevelPostProcessor
 				
 				Case 'b5506b1e8f2fc272ad0c77b9e0df5491': // MAP19
 					SetLineVertexes (636, 520, 517); // Fix the broken line
-					ClearLineSpecial (957);
-					ClearLineSpecial (960);
-					ClearLineSpecial (958);
-					ClearLineSpecial (959);
-					ClearLineIDs (957);
 					AddLineID (957, 27);
 					AddLineID (502, 28);
 					SetLineSpecial (957, 156, 28, 27, 0, 1); // Makes the destination visible through the portal
