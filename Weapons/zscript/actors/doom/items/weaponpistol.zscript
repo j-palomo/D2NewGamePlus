@@ -26,12 +26,57 @@ Class HandGun : DoomWeapon replaces Pistol
 			PISG A 1 A_Raise;
 			Loop;
 		Fire:
-			PISG A 2;
-			PISG B 2 A_FireHandGun ();
-			PISG C 2 A_ZoomFactor (1.0);
-			PISG DECA 2;
-			PISG A 5 A_ReFire;
+			PISG A 2 A_ClearReFire();
+			PISG B 1 A_FireHandGun ();
+			PISG B 1 A_ZoomFactor (1.0);
+			PISG B 0 A_ReFire ("SingleFire");
+			PISG B 0 A_WeaponReady;
+			Goto SupaDupaFastFire;
+		
+			PISG CDECA 2;
+			PISG A 5 A_ReFire ("Fire");
 			Goto Ready;
+			
+		SingleFire:
+			PISG C 2;
+			PISG D 2;
+			PISG A 0 A_ReFire ("HoldFire");
+			PISG A 0 A_WeaponReady;
+			Goto FasterFire;
+			
+		SupaDupaFastFire:
+			PISG C 1 A_WeaponReady;
+			PISG C 1 A_WeaponReady;
+			Goto SupaFastFire;
+		
+		SupaFastFire:
+			PISG D 1 A_WeaponReady;
+			PISG D 1 A_WeaponReady;
+			Goto FasterFire;
+			
+		FasterFire:
+			PISG E 1 A_WeaponReady;
+			PISG E 1 A_WeaponReady;
+			Goto FastFire;
+			
+		FastFire:
+			PISG C 1 A_WeaponReady;
+			PISG C 1 A_WeaponReady;
+			Goto Ready;
+			
+		HoldFire:
+			PISG E 2;
+			PISG C 2;
+			PISG A 1;
+			PISG A 0 A_ReFire ("HoldLoop");
+			Goto HoldLoop;
+			
+		
+		HoldLoop:
+			PISG A 1 A_ClearReFire ();
+			PISG A 5 A_ReFire ("Fire");
+			Goto Ready;
+			
 		Flash:
 			PISF A 2 Bright A_Light1;
 			Goto LightDone;
@@ -49,3 +94,71 @@ Class HandGun : DoomWeapon replaces Pistol
 		A_ZoomFactor (0.995);
 	}
 }
+
+/*
+
+	States
+	{
+		Spawn:
+			PISP A -1;
+			Stop;
+		Select:
+			PISG AAAAAAAA 1 A_Raise;
+			PISA DDCCBBAA 1 A_Raise;
+			PISA A 1 A_Raise;
+			Wait;
+		Deselect:
+			PISA A 1 A_Lower;
+			Loop;
+		Ready:
+			PISA A 1 A_WeaponReady;
+			Loop;
+		Fire:
+			PISB A 1;
+			PISB B 1 Bright{
+				//A_FireBullets (5, 5, -1, 5);
+				If (CountInv("PowerStrength"))
+				{A_FireProjectile ("SuperPlasmaPistolProjectile", 0, 0, 5, 5);}
+				Else
+				{A_FireProjectile ("PlasmaPistolProjectile", 0, 0, 5, 5);}
+				A_StartSound("weapons/pistol/fire");
+				A_GunFlash("Flash");
+				A_SetBlend ("80 a6 ff", 0.1, 2);
+			}
+			PISB B 1 Bright;
+			PISB B 0 A_ReFire ("SingleFire");
+			PISB B 0 A_WeaponReady;
+			Goto SupaFastFire;
+		SingleFire:
+			PISB C 1;
+			PISB C 1;
+			PISB C 0 A_ReFire ("HoldFire");
+			PISB C 0 A_WeaponReady;
+			Goto FastFire;
+		SupaFastFire:
+			PISB C 1 A_WeaponReady;
+			PISB C 1 A_WeaponReady;
+			Goto FastFire;
+		FastFire:
+			PISB B 1 A_WeaponReady;
+			PISB B 1 A_WeaponReady;
+			PISB B 1 A_WeaponReady;
+			PISA A 1 A_WeaponReady;
+			Goto Ready;
+		HoldFire:
+			PISB B 1;
+			PISB B 1;
+			PISB B 1;
+			PISA A 1 A_ReFire ("HoldLoop");
+			Goto HoldLoop;
+		HoldLoop:
+			PISA A 5 A_ClearReFire ();
+			PISA A 1 A_ReFire ("Fire");
+			Goto Ready;
+		Flash:
+			TNT1 A 2 Bright A_Light1();
+			Goto LightDone;
+	}
+}
+
+*/
