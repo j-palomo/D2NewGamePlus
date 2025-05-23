@@ -53,18 +53,18 @@ Class RebalancedSuperShotgun : DoomWeapon replaces SuperShotgun
 			SHT2 B 7;
 			SHT2 C 7;
 			SHT2 D 7 {
-				A_OpenShotgun2;
+				A_StartSound ("weapons/sshoto", CHAN_WEAPON);
 				A_EjectShell();
 			}
 			SHT2 E 7;
-			SHT2 F 7 A_LoadShotgun2;
+			SHT2 F 7 A_StartSound ("weapons/sshotl", CHAN_WEAPON);
 			SHT2 G 6 {
 				invoker.NeedsReload = False;
 				invoker.DepleteAmmo(invoker.bAltFire, true);
 			}
-			SHT2 B 6 A_CloseShotgun2;
-			SHT2 H 6;
-			SHT2 A 5 A_ReFire ("Fire");
+			SHT2 B 6 A_CloseShotgun2();
+			SHT2 H 6 A_ReFire ("Fire");
+			SHT2 A 3;
 			Goto Ready;
 			
 		Flash:
@@ -80,7 +80,7 @@ Class RebalancedSuperShotgun : DoomWeapon replaces SuperShotgun
 	Action Void A_FireSuperShotgunRebalanced ()
 	{
 		A_FireBullets (11.2, 2.8, 20, 5, flags:0); // More accurate, same damage
-		A_StartSound("weapons/shotgf", CHAN_WEAPON);
+		A_StartSound("weapons/sshotf", CHAN_WEAPON);
 		A_GunFlash();
 		A_Quake (3.5, 7, 0, 1, "");
 		invoker.NeedsReload = True;
