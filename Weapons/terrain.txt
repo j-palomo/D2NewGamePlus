@@ -14,6 +14,13 @@ Splash Water
 	noalert
 }
 
+Splash DarkSand
+{
+	BaseClass Splash_DarkSand_Large
+	SmallClass Splash_DarkSand
+	noalert
+}
+
 terrain Nuke
 {
 	Footclip 10
@@ -34,6 +41,13 @@ terrain Water
 	StepDistance 8
 }
 
+terrain DarkSand
+{
+	Footclip 5
+	Splash DarkSand
+	StepDistance 8
+}
+
 floor NUKAGE1 Nuke
 floor NUKAGE2 Nuke
 floor NUKAGE3 Nuke
@@ -41,3 +55,4 @@ floor FWATER1 Water
 floor FWATER2 Water
 floor FWATER3 Water
 floor FWATER4 Water
+floor MFLR8_4 DarkSand

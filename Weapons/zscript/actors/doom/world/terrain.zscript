@@ -80,3 +80,25 @@ Class Splash_Nuke_Large : Splash_Base
 			Goto Death;
 	}
 }
+
+Class Splash_DarkSand : Splash_Base
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 1 A_SpawnSplashParticles ("232323", "2F2F2F", "1B1B1B", 1);
+			Goto Death;
+	}
+}
+
+Class Splash_DarkSand_Large : Splash_Base
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 1 A_SpawnSplashParticles ("232323", "2F2F2F", "1B1B1B", 3);
+			Goto Death;
+	}
+}
