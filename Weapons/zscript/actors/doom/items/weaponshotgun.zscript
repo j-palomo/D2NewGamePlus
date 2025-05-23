@@ -79,6 +79,7 @@ Class EmptyShotgunShell : Actor
 		+Missile;
 		+NoBlockMap;
 		+NOSAVEGAME;
+		+ThruActors;
 	}
 	
 	Override void PostBeginPlay()
