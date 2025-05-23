@@ -1,4 +1,5 @@
 [default]
+SNDMNU_FOOTSTEPVOLUME = "$$SNDMENU_FOOTSTEPVOLUME"; // Bug fix for GZDoom. Remove this once it is fixed.
 ID24_GOTINCINERATOR = "You got the incinerator!";
 ID24_GOTCALAMITYBLADE = "You got the calamity blade!  Hot damn!";
 
