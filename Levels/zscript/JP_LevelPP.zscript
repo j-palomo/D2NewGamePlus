@@ -245,6 +245,17 @@ Extend Class NGPLUS_LevelPostProcessor
 					SpawnThing (T_FuelAmmoLarge, (4560.0, 3072.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					break;
 				
+				Case 'cec791136a83eec4b91d39718bdf9d82': // MAP04
+					
+					break;
+					
+				Case '9e061ad7fbcd7fad968c976cb4aa3b9d': // MAP05
+					
+					break;
+					
+				Case '434575dcb650b4efc912efc0782c7acc': // MAP06
+					
+					break;
 				
 				Case '291f24417fb3dd411339ae82ef9b3597': // MAP07
 					ClearSectorTags (11);
@@ -286,12 +297,55 @@ Extend Class NGPLUS_LevelPostProcessor
 					ClearLineSpecial (169);
 					SetLineSpecial (174, 11, 12, 16, 0, 0, 0); // "Secret" exit instead will open up the door if it closes on you
 					SetSectorSpecial (25, 74); // Door closes after 30 seconds
-					
 					SetSectorSpecial (23, 1024); // Make this the secret instead
 					SetSectorSpecial (1, 0); // Remove this secret
 					break;
+					
+				Case '66c46385eb1a23d60839d1532522076b': // MAP08
+					
+					break;
+					
+				Case '82256f04136adb2413bfc604b5f6adf3': // MAP09
+					
+					break;
+					
+				Case '6c620f43705bec0abbabbf46ac3e62d2': // MAP10
+					
+					break;
+					
+				Case '73d9e03cee7bf1a97efd2ead86688ef8': // MAP11
+					
+					break;
+					
+				Case '1af4dec2627360a55b3eb397bc15c39d': // MAP12
+					
+					break;
+					
+				Case 'fba6547b9fd44e95671a923a066e516f': // MAP13
+					
+					break;
+					
+				Case '5bda34da60c0530794cc1ea2da017976': // MAP14
+					
+					break;
+					
+				Case '1a540ba717bf9ec85f8522594c352f2a': // MAP15
+					
+					break;
+					
+				Case '6b60f37b91309dff1cdf02e5e476210d': // MAP16
+					
+					break;
+					
+				Case 'e1cfd5c6e60c3b6c30f8b95fc287e9fe': // MAP17
+					
+					break;
+					
+				Case '0d491365c1b88b7d1b603890100dd03e': // MAP18
+					
+					break;
 				
-					Case 'b5506b1e8f2fc272ad0c77b9e0df5491': // MAP19
+				Case 'b5506b1e8f2fc272ad0c77b9e0df5491': // MAP19
 					SetLineVertexes (636, 520, 517); // Fix the broken line
 					ClearLineSpecial (957);
 					ClearLineSpecial (960);
@@ -308,6 +362,46 @@ Extend Class NGPLUS_LevelPostProcessor
 					uint Tele_botleft = SpawnThing (T_SecActEnter, (-2656.0, 2656.0, 0));
 					SetThingSpecial (Tele_botleft, 70);
 					SetThingArgument (Tele_botleft, 1, 10);
+					break;
+				
+				Case '8898f5ec9cbdcd98019a1bc1bf892a8a': // MAP20
+					
+					break;
+					
+				Case 'ebdac00e9d25d884b2c8f4b1f0390539': // MAP21
+					
+					break;
+					
+				Case '4aa9b3ce449fb614497756e96509f096': // MAP22
+					
+					break;
+					
+				Case '63f25c97d5b1cc174efea7f6af499960': // MAP23
+					
+					break;
+					
+				Case '3eff15c64a03b36e8e47926c6df9ef70': // MAP24
+					
+					break;
+					
+				Case '94893a0dc429a22adc4b3a73da537e16': // MAP25
+					
+					break;
+					
+				Case '1037366026aab4b0cf11bab27db90e4e': // MAP26
+					
+					break;
+					
+				Case '110f84de041052b59307faf0293e6bc0': // MAP27
+					
+					break;
+					
+				Case '84bb2c8ed2343c91136b87f1832e7ca5': // MAP28
+					
+					break;
+					
+				Case '20251eda21b2f2ecf6ff5b8bbc00b26c': // MAP29
+					
 					break;
 				
 				Case '5eecd88f4491f516d590ce4bbf45f532': // MAP30
