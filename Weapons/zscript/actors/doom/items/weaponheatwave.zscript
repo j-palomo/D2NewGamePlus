@@ -141,8 +141,9 @@ Class Heatwave : DoomWeapon replaces ID24CalamityBlade
 		fireEnd:
 			HETF A 0 Bright A_StartSound("weapons/heatwave/fire", CHAN_WEAPON);
 			HETF A 0 Bright A_WeaponOffset (0, 32, WOF_INTERPOLATE);
+			HETF A 0 Bright A_ZoomFactor (0.95);
 			HETF A 3 Bright A_GunFlash("Flash");
-			HETF B 5 Bright;
+			HETF B 5 Bright A_ZoomFactor (1.0);
 			HETG D 4;
 			HETG C 4;
 			HETG B 4;

@@ -63,19 +63,21 @@ Class Minigun : DoomWeapon replaces Chaingun
 		Fire:
 			---- A 0 A_JumpIf (invoker.FireState, "FireB");
 		FireA: // Intentional fall-through
-			CHGG A 4 {
+			CHGG A 2 {
 				A_FireMiniGun();
 				A_GunFlash("FlashA");
 				invoker.FireState = True;
 			}
+			CHGG A 2 A_ZoomFactor (1.0);
 			CHGG B 0 A_ReFire ("FireB");
 			Goto WeaponReady;
 		FireB:
-			CHGG B 4 {
+			CHGG B 2 {
 				A_FireMiniGun();
 				A_GunFlash("FlashB");
 				invoker.FireState = False;
 			}
+			CHGG B 2 A_ZoomFactor (1.0);
 			CHGG A 0 A_ReFire ("FireA");
 			Goto WeaponReady;
 			
@@ -95,6 +97,8 @@ Class Minigun : DoomWeapon replaces Chaingun
 	Action Void A_FireMiniGun ()
 	{
 		A_FireBullets (2.8, 2.8, -1, 8, "BulletPuff", FBF_USEAMMO); // Buffed damage, slight change to accuracy
-		A_StartSound("weapons/chngun", CHAN_WEAPON);
+		A_StartSound ("weapons/chngun", CHAN_WEAPON);
+		A_Quake (0.25, 3, 0, 1, "");
+		A_ZoomFactor (0.995);
 	}
 }

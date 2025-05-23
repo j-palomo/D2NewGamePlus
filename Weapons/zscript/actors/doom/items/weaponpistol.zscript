@@ -28,7 +28,8 @@ Class HandGun : DoomWeapon replaces Pistol
 		Fire:
 			PISG A 2;
 			PISG B 2 A_FireHandGun ();
-			PISG CDECA 2;
+			PISG C 2 A_ZoomFactor (1.0);
+			PISG DECA 2;
 			PISG A 5 A_ReFire;
 			Goto Ready;
 		Flash:
@@ -44,5 +45,7 @@ Class HandGun : DoomWeapon replaces Pistol
 		A_FireBullets (2.0, 2.0, 1, 8, "BulletPuff", FBF_USEAMMO);
 		A_StartSound("weapons/pistol", CHAN_WEAPON);
 		A_GunFlash();
+		A_Quake (0.25, 2, 0, 1, "");
+		A_ZoomFactor (0.995);
 	}
 }

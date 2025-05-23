@@ -1,4 +1,4 @@
-Class Unarmed : DoomWeapon
+Class Unarmed : DoomWeapon replaces Fist
 {
 	Default
 	{
