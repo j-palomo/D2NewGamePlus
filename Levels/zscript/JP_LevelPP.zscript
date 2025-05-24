@@ -132,18 +132,21 @@ Extend Class NGPLUS_LevelPostProcessor
 					AddSectorTag (94, 22); // Teleporter in secret room
 					SetThingXY (85, 944.0, 912.0); // Stuck Shotgunner
 					SpawnThing (T_RadSuit, (1244.0, 1672.0, 0));
-					SpawnThing (T_RadSuit, (544.0, 728.0, 0));
+					SpawnThing (T_RadSuit, (544.0, 920.0, 0));
+					SpawnThing (T_RocketBox, (544.0, 728.0, 0));
 					SpawnThing (T_RadSuit, (1232.0, 480.0, 0));
 					SpawnThing (T_Shocktrooper, (1056.0, 1680.0, 0), 270, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing (T_Shocktrooper, (992.0, 1376.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing (T_Chaingun, (1088.0, 1936.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
-					SpawnThing (T_PlasmaRifle, (992.0, 1360.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_ClipBox, (1320.0, 1816.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_BFG9000, (992.0, 1360.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_Cell, (872.0, 1352.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_Cell, (1112.0, 1352.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_Shotgun, (512.0, 1200.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_Stimpack, (596.0, 1708.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_Shocktrooper, (512.0, 1440.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing (T_Shocktrooper, (512.0, 1200.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Shocktrooper, (1440.0, 1360.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE);
 					SpawnPointLight ((700.0, 1528.0, 64.0), 255, 127, 127, 32); // Exit sign
 					SpawnPointLight ((928.0, 416.0, 0), 255, 127, 127, 64);
 					SpawnPointLight ((928.0, 416.0, 64.0), 255, 127, 127, 64);
@@ -177,6 +180,8 @@ Extend Class NGPLUS_LevelPostProcessor
 					// Move the keys
 					SetThingXY (44, 1176.0, 544.0); // Blue Key
 					SetThingXY (31, 928.0, 576.0); // Red Key
+					SetThingID (44, 3);
+					SetThingID (31, 4);
 					// Change door lock so we don't get trapped
 					SetLineSpecial (390, 13, 0, 16, 0, 129, 12);
 					SetLineSpecial (396, 13, 0, 16, 0, 129, 12);
@@ -195,6 +200,11 @@ Extend Class NGPLUS_LevelPostProcessor
 					SetThingID (MAP02_Cam2, 2);
 					AddLineID (315, 6);
 					AddLineID (135, 15);
+					SpawnThing (T_FuelAmmoLarge, (1736.0, 1152.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_Incinerator, (1736.0, 1048.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_HeatWave, (1060.0, 552.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoSmall, (1060.0, 536.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_RocketLauncher, (1520.0, 812.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					break;
 				
 				Case '5e8679670469f92e15cf4219b5b98fef': // MAP03

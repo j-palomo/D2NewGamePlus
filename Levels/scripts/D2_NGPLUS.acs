@@ -79,6 +79,8 @@ Script "D2_MAP02_Open" Open
 		{
 			If (CheckMapMD5 ("ab24ae6e2cb13cbdd04600a4d37f9189", "MAP02"))
 			{
+				SetThingSpecial (3, ACS_NamedExecuteAlways, "MAP02_BlueKey", 0);
+				SetThingSpecial (4, ACS_NamedExecuteAlways, "MAP02_RedKey", 0);
 				// Replaces all water and grass textures with damaging floors. Good luck
 				ReplaceTextures ("FWATER1", "NUKAGE1", 0);
 				ReplaceTextures ("FWATER2", "NUKAGE1", 0);
@@ -138,6 +140,20 @@ Script "MAP02_2ndSwitch" (Int RedLight)
 	Floor_LowerToHighest (3, 8, 128);
 	Int V_TID = UniqueTID();
 	SpawnForced ("Vassago", 784.0, 1816.0, 0, V_TID, 0);
+}
+
+Script "MAP02_BlueKey" (void)
+{
+	Int AV_TID = UniqueTID();
+	SpawnForced ("Archvile", 880.0, 1064.0, 0, AV_TID, 128);
+	SetActorFlag (AV_TID, "AMBUSH", true);
+}
+
+Script "MAP02_RedKey" (void)
+{
+	Int AV_TID = UniqueTID();
+	SpawnForced ("Archvile", 512.0, 1600.0, 0, AV_TID, 192);
+	SetActorFlag (AV_TID, "AMBUSH", true);
 }
 
 Script "D2_MAP03_Open" Open
