@@ -71,7 +71,7 @@ Class RebalancedBFGBall : BFGBall replaces BFGBall
 		+RollSprite;
 		+RollCenter;
 		+ForceXYBillboard;
-		DamageType "Plasma";
+		DamageType "BFG";
 	}
 	
 	States
@@ -82,11 +82,11 @@ Class RebalancedBFGBall : BFGBall replaces BFGBall
 		Death:
 			---- A 0 Bright Light ("BFGBALL") A_SetRoll (0);
 			BFE1 A 8 Bright Light ("BFGBALL_X1") {
-				A_Explode(128, 256, XF_CIRCULAR|XF_CIRCULARTHRUST, false, 128, 0, 0, "", 'Plasma');
+				A_Explode(128, 256, XF_CIRCULAR|XF_CIRCULARTHRUST, false, 128, 0, 0, "", 'BFG');
 				A_Quake (1.5, 8, 0, 128, "");
 			}
 			BFE1 B 8 Bright Light ("BFGBALL_X2") {
-				A_Explode(128, 256, XF_CIRCULAR|XF_CIRCULARTHRUST, false, 128, 0, 0, "", 'Plasma');
+				A_Explode(128, 256, XF_CIRCULAR|XF_CIRCULARTHRUST, false, 128, 0, 0, "", 'BFG');
 				A_Quake (2.5, 8, 0, 128, "");
 			}
 			BFE1 C 8 Bright Light ("BFGBALL_X3") {
