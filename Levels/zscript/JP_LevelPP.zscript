@@ -242,11 +242,12 @@ Extend Class NGPLUS_LevelPostProcessor
 					SpawnThing (T_RadSuit, (4000.0, 2776.0, 0));
 					SpawnThing (T_RadSuit, (3100.0, 2756.0, 0));
 					SpawnThing (T_Archvile, (3576.0, 3696.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
-					SpawnThing (T_Revenant, (2368.0, 2756.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
-					SpawnThing (T_PainElemental, (2688.0, 2944.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
-					SpawnThing (T_ChaingunGuy, (2208.0, 3520.0, 0), 270, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
-					SpawnThing (T_HellKnight, (4304.0, 2880.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Shocktrooper, (2368.0, 2756.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Banshee, (2688.0, 2944.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Shocktrooper, (2208.0, 3520.0, 0), 270, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Vassago, (4304.0, 2880.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing (T_Incinerator, (2032.0, 3616.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_Heatwave, (2880.0, 3360.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_FuelAmmoSmall, (2032.0, 3648.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_FuelAmmoSmall, (3360.0, 3440.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_FuelAmmoSmall, (3360.0, 3280.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
