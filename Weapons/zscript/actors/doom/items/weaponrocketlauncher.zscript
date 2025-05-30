@@ -56,18 +56,20 @@ Class PlayerRocket : Rocket
 	
 	States
 	{
+		Spawn:
+			MISL A 1 Bright Light ("ROCKET");
+			Loop;
 		Death:
-			MISL B 8 Bright {
+			MISL B 8 Bright Light ("ROCKET_X1") {
 				A_Explode (128, 128, XF_HURTSOURCE|XF_THRUSTZ|XF_CIRCULAR, damagetype:"Explosive"); // Make it a circular shape
 				A_Explode (128, 128, XF_CIRCULARTHRUST|XF_CIRCULAR, damagetype:"Explosive"); // Don't hurt ourself more since we do more AoE damage.
 				A_Quake (2.0, 8, 0, 128, "");
 			}
-			MISL C 6 Bright;
-			MISL D 4 Bright;
+			MISL C 6 Bright Light ("ROCKET_X2");
+			MISL D 4 Bright Light ("ROCKET_X3");
 			Stop;
 	}
 }
-
 
 
 Class RocketAmm0 : Ammo replaces RocketAmmo

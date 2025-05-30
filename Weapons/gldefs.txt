@@ -150,12 +150,3 @@ object IncineratorFlame
 	frame IFLMO {light INCIN3}
 	frame IFLMP {light INCIN7}
 }
-
-object PlayerRocket
-{
-    frame MISLA { light ROCKET    }
-
-    frame MISLB { light ROCKET_X1 }
-    frame MISLC { light ROCKET_X2 }
-    frame MISLD { light ROCKET_X3 }
-}
