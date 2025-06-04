@@ -91,6 +91,6 @@ Class TyrantRocket : Rocket
 	}
 }
 
-Class TyrantBoss1 : Tyrant {}
+Class TyrantBoss1 : Tyrant {Default{+E4M6BOSS;}}
 
 Class TyrantBoss2 : Tyrant {}
