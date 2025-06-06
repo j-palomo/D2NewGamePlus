@@ -1,4 +1,4 @@
-Class Banshee : Actor
+Class Banshee : Actor replaces Deh_Actor_151
 {
 	bool exploded;
 	Default

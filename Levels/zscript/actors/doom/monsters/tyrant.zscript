@@ -1,4 +1,4 @@
-Class Tyrant : Actor
+Class Tyrant : Actor replaces Deh_Actor_155
 {
 	Default
 	{
@@ -13,6 +13,9 @@ Class Tyrant : Actor
 		+MISSILEMORE;
 		+FLOORCLIP;
 		+BOSSDEATH;
+		+E4M6BOSS;
+		+E2M8BOSS;
+		Species "Tyrant";
 		Tag "$TAG_TYRANT";
 		Obituary "$OB_TYRANT";
 		SeeSound "tyrant/sight";
@@ -91,6 +94,6 @@ Class TyrantRocket : Rocket
 	}
 }
 
-Class TyrantBoss1 : Tyrant {Default{+E4M6BOSS;}}
+Class TyrantBoss1 : Tyrant replaces Deh_Actor_156 {}
 
-Class TyrantBoss2 : Tyrant {}
+Class TyrantBoss2 : Tyrant replaces Deh_Actor_157 {}

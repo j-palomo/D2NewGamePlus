@@ -1,4 +1,4 @@
-Class Mindweaver : Actor // Editor number apparently doesn't replace it
+Class Mindweaver : Actor replaces Deh_Actor_152
 {						 
 	Default
 	{

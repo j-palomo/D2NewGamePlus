@@ -1,4 +1,4 @@
-Class Vassago : Actor
+Class Vassago : Actor replaces Deh_Actor_154
 {
 	Default
 	{

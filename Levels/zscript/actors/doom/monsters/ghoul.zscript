@@ -1,4 +1,4 @@
-Class Ghoul : Actor
+Class Ghoul : Actor replaces Deh_Actor_150
 {
 
 	Default

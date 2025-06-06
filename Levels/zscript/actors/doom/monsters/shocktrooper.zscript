@@ -1,4 +1,4 @@
-Class Shocktrooper : Actor
+Class Shocktrooper : Actor replaces Deh_Actor_153
 {
 	Bool WasGibbed;
 	Override void PostBeginPlay()
