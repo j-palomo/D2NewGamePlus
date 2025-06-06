@@ -223,29 +223,6 @@ pointlight GHOULATTACK
 	attenuate 1
 }
 
-object Ghoul
-{
-	frame GHULE0 {light GHOULATTACK}
-	frame GHULF0 {light GHOULATTACK}
-	frame GHULG0 {light GHOULATTACK}
-	frame GHULI0 {light GHOULPAIN}
-	frame GHULJ0 {light GHOULPAIN}
-	frame GHULK0 {light GHOULPAIN}
-}
-
-object GhoulBall
-{
-	frame GBALA0 {light GHOUL1}
-	frame GBALB0 {light GHOUL1}
-	frame GBALC0 {light GHOUL1}
-	frame APBXB0 {light GHOUL2}
-	frame APBXC0 {light GHOUL3}
-	frame APBXD0 {light GHOUL4}
-	frame APBXE0 {light GHOUL5}
-}
-
-//
-
 pointlight BANSHEE1
 {
     color 1.0 0.1 0.1

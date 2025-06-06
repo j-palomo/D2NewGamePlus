@@ -31,14 +31,14 @@ Class Ghoul : Actor replaces Deh_Actor_150
 			GHUL AABBCCBB 3 A_Chase;
 			loop;
 		Missile:
-			GHUL DE 4 Bright A_FaceTarget;
-			GHUL F 4 Bright A_SpawnProjectile("GhoulBall", 20.0);
-			GHUL G 4 Bright;
+			GHUL D 4 Bright A_FaceTarget;
+			GHUL E 4 Bright Light ("GHOULATTACK") A_FaceTarget;
+			GHUL F 4 Bright Light ("GHOULATTACK") A_SpawnProjectile("GhoulBall", 20.0);
+			GHUL G 4 Bright Light ("GHOULATTACK");
 			goto see;
 		Pain:
-			GHUL I 2 Bright;
-			GHUL J 2 Bright;
-			GHUL K 2 Bright A_Pain;
+			GHUL IJ 2 Bright Light ("GHOULPAIN");
+			GHUL K 2 Bright Light ("GHOULPAIN") A_Pain;
 			goto see;
 		Death:
 			GHUL L 5 Bright;
@@ -50,6 +50,7 @@ Class Ghoul : Actor replaces Deh_Actor_150
 			stop;
 	}
 }
+
 
 Class GhoulBall : Actor
 {
@@ -70,11 +71,14 @@ Class GhoulBall : Actor
 	States
 	{
 		Spawn:
-			GBAL AB 4 Bright;
+			GBAL AB 4 Bright Light ("GHOUL1");
 			Loop;
 		Death:
-			GBAL C 5 Bright;
-			APBX BCDE 5 Bright;
+			GBAL C 5 Bright Light ("GHOUL1");
+			APBX B 5 Bright Light ("GHOUL2");
+			APBX C 5 Bright Light ("GHOUL3");
+			APBX D 5 Bright Light ("GHOUL4");
+			APBX E 5 Bright Light ("GHOUL5");
 			Stop;
 	}
 }
