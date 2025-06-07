@@ -257,7 +257,50 @@ Extend Class NGPLUS_LevelPostProcessor
 					break;
 				
 				Case 'cec791136a83eec4b91d39718bdf9d82': // MAP04
-					
+					SpawnThing (T_Chaingun, (-928.0, 1632.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_Shocktrooper, (-848.0, 1520.0, 0), 225, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Shocktrooper, (-768.0, 1040.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Shocktrooper, (-768.0, 1040.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Stimpack, (-992.0, 1520.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_PlasmaRifle, (-944.0, 464.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					// Replace the lighting effect in the hallway behind the blue door
+					SpawnSpotLight ((-264.0, 1112.0, 0), 255, 255, 255, 128, 0, 15, 45, 9);
+					SpawnSpotLight ((-264.0, 1192.0, 0), 255, 255, 255, 128, 0, 15, 45, 9);
+					SpawnSpotLight ((-264.0, 1256.0, 0), 255, 255, 255, 128, 0, 15, 45, 9);
+					SpawnSpotLight ((-648.0, 1592.0, 0), 255, 255, 255, 128, 0, 15, 45, 9);
+					SpawnSpotLight ((-648.0, 1656.0, 0), 255, 255, 255, 128, 0, 15, 45, 9);
+					SpawnSpotLight ((-56.0, 1112.0, 0), 255, 255, 255, 128, 180, 15, 45, 9);
+					SpawnSpotLight ((-56.0, 1192.0, 0), 255, 255, 255, 128, 180, 15, 45, 9);
+					SpawnSpotLight ((-56.0, 1256.0, 0), 255, 255, 255, 128, 180, 15, 45, 9);
+					SpawnSpotLight ((-56.0, 1320.0, 0), 255, 255, 255, 128, 180, 15, 45, 9);
+					SpawnSpotLight ((-376.0, 1544.0, 0), 255, 255, 255, 128, 270, 15, 45, 9);
+					SpawnSpotLight ((-328.0, 1336.0, 0), 255, 255, 255, 128, 90, 15, 45, 9);
+					SpawnSpotLight ((-408.0, 1336.0, 0), 255, 255, 255, 128, 90, 15, 45, 9);
+					SpawnSpotLight ((-264.0, 1112.0, 96.0), 255, 255, 255, 128, 0, 15, 45, 9);
+					SpawnSpotLight ((-264.0, 1192.0, 96.0), 255, 255, 255, 128, 0, 15, 45, 9);
+					SpawnSpotLight ((-264.0, 1256.0, 96.0), 255, 255, 255, 128, 0, 15, 45, 9);
+					SpawnSpotLight ((-648.0, 1592.0, 96.0), 255, 255, 255, 128, 0, 15, 45, 9);
+					SpawnSpotLight ((-648.0, 1656.0, 96.0), 255, 255, 255, 128, 0, 15, 45, 9);
+					SpawnSpotLight ((-56.0, 1112.0, 96.0), 255, 255, 255, 128, 180, 15, 45, 9);
+					SpawnSpotLight ((-56.0, 1192.0, 96.0), 255, 255, 255, 128, 180, 15, 45, 9);
+					SpawnSpotLight ((-56.0, 1256.0, 96.0), 255, 255, 255, 128, 180, 15, 45, 9);
+					SpawnSpotLight ((-56.0, 1320.0, 96.0), 255, 255, 255, 128, 180, 15, 45, 9);
+					SpawnSpotLight ((-376.0, 1544.0, 96.0), 255, 255, 255, 128, 270, 15, 45, 9);
+					SpawnSpotLight ((-328.0, 1336.0, 96.0), 255, 255, 255, 128, 90, 15, 45, 9);
+					SpawnSpotLight ((-408.0, 1336.0, 96.0), 255, 255, 255, 128, 90, 15, 45, 9);
+					SpawnPointLight ((-256.0, 1112.0, 48.0), 255, 255, 255, 32, 9);
+					SpawnPointLight ((-256.0, 1192.0, 48.0), 255, 255, 255, 32, 9);
+					SpawnPointLight ((-256.0, 1256.0, 48.0), 255, 255, 255, 32, 9);
+					SpawnPointLight ((-640.0, 1592.0, 48.0), 255, 255, 255, 32, 9);
+					SpawnPointLight ((-640.0, 1656.0, 48.0), 255, 255, 255, 32, 9);
+					SpawnPointLight ((-64.0, 1112.0, 48.0), 255, 255, 255, 32, 9);
+					SpawnPointLight ((-64.0, 1192.0, 48.0), 255, 255, 255, 32, 9);
+					SpawnPointLight ((-64.0, 1256.0, 48.0), 255, 255, 255, 32, 9);
+					SpawnPointLight ((-64.0, 1320.0, 48.0), 255, 255, 255, 32, 9);
+					SpawnPointLight ((-376.0, 1536.0, 48.0), 255, 255, 255, 32, 9);
+					SpawnPointLight ((-328.0, 1344.0, 48.0), 255, 255, 255, 32, 9);
+					SpawnPointLight ((-408.0, 1344.0, 48.0), 255, 255, 255, 32, 9);
+					AddLineID (429, 23);
 					break;
 					
 				Case '9e061ad7fbcd7fad968c976cb4aa3b9d': // MAP05

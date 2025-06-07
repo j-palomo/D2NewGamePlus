@@ -208,6 +208,36 @@ Script "MAP03_1stSwitch" (void)
 	SetResultValue (True);
 }
 
+Script "D2_MAP04_Open" Open
+{
+	If (GameSkill () >= 5)
+	{
+		If (GetLevelInfo (LEVELINFO_LEVELNUM) == 4)
+		{
+			If (CheckMapMD5 ("cec791136a83eec4b91d39718bdf9d82", "MAP04"))
+			{
+				Thing_Deactivate (9);
+				SetLineSpecial (9, ACS_NamedExecuteWithResult, "MAP04_OnSwitch");
+				SetLineSpecial (23, ACS_NamedExecuteWithResult, "MAP04_OffSwitch");
+			}
+		}
+	}
+}
+
+Script "MAP04_OnSwitch" (void)
+{
+//	Light_ChangeToValue (9, 120);
+	Thing_Activate (9);
+	SetResultValue (True);
+}
+
+Script "MAP04_OffSwitch" (void)
+{
+//	Light_ChangeToValue (9, 80);
+	Thing_Deactivate (9);
+	SetResultValue (True);
+}
+
 Script "D2_MAP07_Open" Open
 {
 	If (GameSkill () >= 5)
