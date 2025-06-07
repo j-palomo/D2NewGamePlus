@@ -217,8 +217,10 @@ Script "D2_MAP04_Open" Open
 			If (CheckMapMD5 ("cec791136a83eec4b91d39718bdf9d82", "MAP04"))
 			{
 				Thing_Deactivate (9);
+				Thing_Deactivate (1);
 				SetLineSpecial (9, ACS_NamedExecuteWithResult, "MAP04_OnSwitch");
 				SetLineSpecial (23, ACS_NamedExecuteWithResult, "MAP04_OffSwitch");
+				SetLineSpecial (3, ACS_NamedExecuteWithResult, "MAP04_BlueKeySwitch");
 			}
 		}
 	}
@@ -226,16 +228,20 @@ Script "D2_MAP04_Open" Open
 
 Script "MAP04_OnSwitch" (void)
 {
-//	Light_ChangeToValue (9, 120);
 	Thing_Activate (9);
 	SetResultValue (True);
 }
 
 Script "MAP04_OffSwitch" (void)
 {
-//	Light_ChangeToValue (9, 80);
 	Thing_Deactivate (9);
 	SetResultValue (True);
+}
+
+Script "MAP04_BlueKeySwitch" (void)
+{
+	Thing_Activate (1);
+	Floor_LowerToHighest (3, 8, 128);
 }
 
 Script "D2_MAP07_Open" Open

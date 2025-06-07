@@ -263,6 +263,7 @@ Extend Class NGPLUS_LevelPostProcessor
 					SpawnThing (T_Shocktrooper, (-768.0, 1040.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing (T_Stimpack, (-992.0, 1520.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_PlasmaRifle, (-944.0, 464.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnPointLight ((-664.0, 480.0, 24.0), 255, 0, 0, 16, 1);
 					// Replace the lighting effect in the hallway behind the blue door
 					SpawnSpotLight ((-264.0, 1112.0, 0), 255, 255, 255, 128, 0, 15, 45, 9);
 					SpawnSpotLight ((-264.0, 1192.0, 0), 255, 255, 255, 128, 0, 15, 45, 9);
