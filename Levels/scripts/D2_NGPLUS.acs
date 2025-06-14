@@ -66,6 +66,7 @@ Script "D2_MAP01_Open" Open
 				Sector_SetFade (1, 45, 25, 10);
 				SetFogDensity (7, 400);
 				Sector_SetFade (7, 45, 25, 10);
+				Line_SetTextureOffset (1, NO_CHANGE, -11.0, SIDE_FRONT, TEXFLAG_BOTTOM);
 			}
 		}
 	}

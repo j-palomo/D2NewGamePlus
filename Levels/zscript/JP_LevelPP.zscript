@@ -124,6 +124,28 @@ Extend Class NGPLUS_LevelPostProcessor
 					SetWallTexture (267, Line.front, Side.mid,"METTEK1");
 					SetWallTexture (268, Line.front, Side.mid,"METTEK1");
 					SetWallTexture (269, Line.front, Side.mid,"METTEK1");
+					SetWallTexture (8, Line.front, Side.bottom, "STRUCTB5");
+					SetLineFlags (8, 0, Line.ML_DONTPEGBOTTOM);
+					AddLineID (8, 1); // How is 1 unused?
+					SetSectorTexture (58, sector.floor, "KCFGRAT1");
+					SetSectorTexture (57, sector.floor, "KCFMET2");
+					SetSectorTexture (57, sector.ceiling, "CEIL3_7");
+					SetSectorTexture (20, sector.floor, "KCFMET2S");
+					SetSectorTexture (40, sector.floor, "KCFMET2S");
+					SetWallTexture (239, Line.front, Side.bottom, "KCMET3H");
+					SetWallTexture (240, Line.front, Side.bottom, "KCMET3H");
+					SetWallTexture (241, Line.front, Side.bottom, "KCMET3H");
+					SetWallTexture (242, Line.front, Side.bottom, "KCMET3H");
+					SetWallTexture (251, Line.front, Side.bottom, "KCMET3H");
+					SetWallTexture (252, Line.front, Side.bottom, "KCMET3H");
+					SetWallTexture (253, Line.front, Side.bottom, "KCMET3H");
+					SetWallTexture (254, Line.front, Side.bottom, "KCMET3H");
+					SetSectorTexture (0, Sector.Floor, "FLOOR3_7");
+					SetSectorTexture (2, Sector.Floor, "FLAT13");
+					SetSectorTexture (3, Sector.Floor, "FLAT13");
+					SetSectorTexture (4, Sector.Floor, "FLAT13");
+					SetSectorTexture (5, Sector.Floor, "FLAT13");
+					SetSectorTexture (6, Sector.Floor, "FLAT13");
 					break;
 					
 				Case 'ab24ae6e2cb13cbdd04600a4d37f9189': // MAP02
