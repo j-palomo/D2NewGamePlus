@@ -216,7 +216,6 @@ Script "D2_MAP04_Open" Open
 		{
 			If (CheckMapMD5 ("cec791136a83eec4b91d39718bdf9d82", "MAP04"))
 			{
-				MAP04_Power = false;
 				Thing_Deactivate (9);
 				Thing_Deactivate (3);
 				Thing_Deactivate (1);
