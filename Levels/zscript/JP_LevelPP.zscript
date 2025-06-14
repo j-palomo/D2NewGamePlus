@@ -118,6 +118,12 @@ Extend Class NGPLUS_LevelPostProcessor
 					// Spawn keys
 					SpawnThing (T_RedKeyCard, (96.0, 2400.0, 0));
 					SpawnThing (T_BlueKeyCard, (640.0, 128.0, 0));
+					SetWallTexture (264, Line.front, Side.mid,"METTEK1");
+					SetWallTexture (265, Line.front, Side.mid,"METTEK1");
+					SetWallTexture (266, Line.front, Side.mid,"METTEK1");
+					SetWallTexture (267, Line.front, Side.mid,"METTEK1");
+					SetWallTexture (268, Line.front, Side.mid,"METTEK1");
+					SetWallTexture (269, Line.front, Side.mid,"METTEK1");
 					break;
 					
 				Case 'ab24ae6e2cb13cbdd04600a4d37f9189': // MAP02
