@@ -7,6 +7,7 @@ Class RebalancedBFG9000 : BFG9000 replaces BFG9000
 		Inventory.PickupMessage "$GOTBFG9000";
 		Tag "$TAG_BFG9000";
 		Weapon.SlotNumber 7;
+		Weapon.AmmoType "C3ll";
 	}
 	
 	States

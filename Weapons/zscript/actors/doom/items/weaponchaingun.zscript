@@ -11,7 +11,7 @@ Class Minigun : DoomWeapon replaces Chaingun
 		Weapon.SelectionOrder 700;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 20;
-		Weapon.AmmoType "Clip";
+		Weapon.AmmoType "Bullets";
 		Weapon.SlotNumber 4;
 		Inventory.PickupMessage "$GOTMINIGUN";
 		Obituary "$OB_MPMINIGUN";

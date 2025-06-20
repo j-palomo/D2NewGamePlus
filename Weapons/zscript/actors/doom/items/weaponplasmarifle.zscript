@@ -1,6 +1,10 @@
 Class RebalancedPlasmaRifle : PlasmaRifle replaces PlasmaRifle
 {
-	Default { Weapon.SlotNumber 6; }
+	Default
+	{
+		Weapon.SlotNumber 6;
+		Weapon.AmmoType "C3ll";
+	}
 	States
 	{
 		Fire:

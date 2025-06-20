@@ -4,6 +4,7 @@ version "4.12"
 
 #include "zscript/actors/doom/player/player.zscript"
 
+#include "zscript/actors/doom/items/ammo.zscript"
 #include "zscript/actors/doom/items/weaponbfg9000.zscript"
 #include "zscript/actors/doom/items/weaponchaingun.zscript"
 #include "zscript/actors/doom/items/weaponchainsaw.zscript"

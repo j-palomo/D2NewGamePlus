@@ -116,7 +116,11 @@ class LoR_DoomStatusBar : BaseStatusBar
 		{
 			DrawImage("STAMMO24", (249, 168), DI_ITEM_OFFSETS);
 			int amt1, maxamt;
-			[amt1, maxamt] = GetAmount("Clip");
+			
+			String BulletAmmoReplacement = "Bullets";
+			Class<Ammo> BAR = BulletAmmoReplacement;
+			If (BAR) [amt1, maxamt] = GetAmount(BulletAmmoReplacement);
+			Else [amt1, maxamt] = GetAmount("Clip");
 			DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 169), DI_TEXT_ALIGN_RIGHT);
 			DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 169), DI_TEXT_ALIGN_RIGHT);
 			
@@ -131,7 +135,10 @@ class LoR_DoomStatusBar : BaseStatusBar
 			DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 181), DI_TEXT_ALIGN_RIGHT);
 			DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 181), DI_TEXT_ALIGN_RIGHT);
 			
-			[amt1, maxamt] = GetAmount("Cell");
+			String CellAmmoReplacement = "C3ll";
+			Class<Ammo> CAR = CellAmmoReplacement;
+			If (CAR) [amt1, maxamt] = GetAmount(CellAmmoReplacement);
+			Else [amt1, maxamt] = GetAmount("Cell");
 			DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 187), DI_TEXT_ALIGN_RIGHT);
 			DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 187), DI_TEXT_ALIGN_RIGHT);
 			

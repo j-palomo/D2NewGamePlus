@@ -7,6 +7,6 @@ Class NewGamePLusPLayer : DoomPlayer
 		Player.CrouchSprite "PLYC";
 		Player.StartItem "HandGun";
 		Player.StartItem "Unarmed";
-		Player.StartItem "Clip", 50;
+		Player.StartItem "Bullets", 50;
 	}
 }
