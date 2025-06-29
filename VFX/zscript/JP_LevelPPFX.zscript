@@ -77,6 +77,7 @@ Class NGPLUS_LevelPostProcessorFX : LevelCompatibility
 				SetLineSpecial (307, 9);
 				// Raise the wall on the outdoor area near spawn
 				OffsetSectorPlane (12, sector.floor, 64);
+				SetWallTexture (354, Line.front, Side.bottom, "BRONZE1");
 				// New textures
 				SetWallTexture (264, Line.front, Side.mid,"METTEK1");
 				SetWallTexture (265, Line.front, Side.mid,"METTEK1");
@@ -108,6 +109,107 @@ Class NGPLUS_LevelPostProcessorFX : LevelCompatibility
 				SetSectorTexture (6, Sector.Floor, "FLAT13");
 				break;
 				
+			Case 'ab24ae6e2cb13cbdd04600a4d37f9189': // MAP02
+				SpawnPointLight ((700.0, 1528.0, 64.0), 255, 127, 127, 32); // Exit sign
+				SpawnPointLight ((928.0, 416.0, 0), 255, 127, 127, 64);
+				SpawnPointLight ((928.0, 416.0, 64.0), 255, 127, 127, 64);
+				break;
+				
+			Case 'cec791136a83eec4b91d39718bdf9d82': // MAP04
+				// Replace the lighting effect in the hallway behind the blue door
+				SpawnSpotLight ((-264.0, 1112.0, 0), 255, 255, 255, 128, 0, 15, 45, 9);
+				SpawnSpotLight ((-264.0, 1192.0, 0), 255, 255, 255, 128, 0, 15, 45, 9);
+				SpawnSpotLight ((-264.0, 1256.0, 0), 255, 255, 255, 128, 0, 15, 45, 9);
+				SpawnSpotLight ((-648.0, 1592.0, 0), 255, 255, 255, 128, 0, 15, 45, 9);
+				SpawnSpotLight ((-648.0, 1656.0, 0), 255, 255, 255, 128, 0, 15, 45, 9);
+				SpawnSpotLight ((-56.0, 1112.0, 0), 255, 255, 255, 128, 180, 15, 45, 9);
+				SpawnSpotLight ((-56.0, 1192.0, 0), 255, 255, 255, 128, 180, 15, 45, 9);
+				SpawnSpotLight ((-56.0, 1256.0, 0), 255, 255, 255, 128, 180, 15, 45, 9);
+				SpawnSpotLight ((-56.0, 1320.0, 0), 255, 255, 255, 128, 180, 15, 45, 9);
+				SpawnSpotLight ((-376.0, 1544.0, 0), 255, 255, 255, 128, 270, 15, 45, 9);
+				SpawnSpotLight ((-328.0, 1336.0, 0), 255, 255, 255, 128, 90, 15, 45, 9);
+				SpawnSpotLight ((-408.0, 1336.0, 0), 255, 255, 255, 128, 90, 15, 45, 9);
+				SpawnSpotLight ((-264.0, 1112.0, 96.0), 255, 255, 255, 128, 0, 15, 45, 9);
+				SpawnSpotLight ((-264.0, 1192.0, 96.0), 255, 255, 255, 128, 0, 15, 45, 9);
+				SpawnSpotLight ((-264.0, 1256.0, 96.0), 255, 255, 255, 128, 0, 15, 45, 9);
+				SpawnSpotLight ((-648.0, 1592.0, 96.0), 255, 255, 255, 128, 0, 15, 45, 9);
+				SpawnSpotLight ((-648.0, 1656.0, 96.0), 255, 255, 255, 128, 0, 15, 45, 9);
+				SpawnSpotLight ((-56.0, 1112.0, 96.0), 255, 255, 255, 128, 180, 15, 45, 9);
+				SpawnSpotLight ((-56.0, 1192.0, 96.0), 255, 255, 255, 128, 180, 15, 45, 9);
+				SpawnSpotLight ((-56.0, 1256.0, 96.0), 255, 255, 255, 128, 180, 15, 45, 9);
+				SpawnSpotLight ((-56.0, 1320.0, 96.0), 255, 255, 255, 128, 180, 15, 45, 9);
+				SpawnSpotLight ((-376.0, 1544.0, 96.0), 255, 255, 255, 128, 270, 15, 45, 9);
+				SpawnSpotLight ((-328.0, 1336.0, 96.0), 255, 255, 255, 128, 90, 15, 45, 9);
+				SpawnSpotLight ((-408.0, 1336.0, 96.0), 255, 255, 255, 128, 90, 15, 45, 9);
+				SpawnPointLight ((-256.0, 1112.0, 48.0), 255, 255, 255, 32, 9);
+				SpawnPointLight ((-256.0, 1192.0, 48.0), 255, 255, 255, 32, 9);
+				SpawnPointLight ((-256.0, 1256.0, 48.0), 255, 255, 255, 32, 9);
+				SpawnPointLight ((-640.0, 1592.0, 48.0), 255, 255, 255, 32, 9);
+				SpawnPointLight ((-640.0, 1656.0, 48.0), 255, 255, 255, 32, 9);
+				SpawnPointLight ((-64.0, 1112.0, 48.0), 255, 255, 255, 32, 9);
+				SpawnPointLight ((-64.0, 1192.0, 48.0), 255, 255, 255, 32, 9);
+				SpawnPointLight ((-64.0, 1256.0, 48.0), 255, 255, 255, 32, 9);
+				SpawnPointLight ((-64.0, 1320.0, 48.0), 255, 255, 255, 32, 9);
+				SpawnPointLight ((-376.0, 1536.0, 48.0), 255, 255, 255, 32, 9);
+				SpawnPointLight ((-328.0, 1344.0, 48.0), 255, 255, 255, 32, 9);
+				SpawnPointLight ((-408.0, 1344.0, 48.0), 255, 255, 255, 32, 9);
+				SpawnPointLight ((-664.0, 480.0, 24.0), 255, 0, 0, 16, 1);
+				AddLineID (429, 23);
+				SetWallTexture (284, Line.front, Side.mid, "DOORNOPE");
+				SetWallTexture (181, Line.front, Side.mid, "SW2TEKW1");
+				SetLineActivation (181, SPAC_Use);
+				AddLineID (181, 24);
+				SetWallTexture (130, Line.front, Side.top, "STONRAD");
+				AddSectorTag (17, 23);
+				ClearSectorTags (33);
+				AddSectorTag (33, 23);
+				AddSectorTag (31, 23);
+				AddSectorTag (34, 23);
+				AddSectorTag (28, 23);
+				AddSectorTag (19, 23);
+				AddSectorTag (20, 23);
+				AddSectorTag (23, 23);
+				ClearLineSpecial (234);
+				ClearLineSpecial (235);
+				ClearLineSpecial (236);
+				SetThingID (21, 2);
+				SpawnPointLight ((-388.1, 300.1, 76.0), 255, 255, 255, 128, 3);
+				SpawnPointLight ((-328.0, 504.1, 64.0), 255, 255, 255, 64, 3);
+				SpawnSpotLight ((-328.0, 504.1, 0), 255, 255, 255, 128, 90, 15, 45, 3);
+				SpawnSpotLight ((-328.0, 504.1, 128.0), 255, 255, 255, 128, 90, 15, 45, 3);
+				SpawnPointLight ((-200.0, 504.1, 64.0), 255, 255, 255, 64, 3);
+				SpawnSpotLight ((-200.0, 504.1, 0), 255, 255, 255, 128, 90, 15, 45, 3);
+				SpawnSpotLight ((-200.0, 504.1, 128.0), 255, 255, 255, 128, 90, 15, 45, 3);
+				SpawnPointLight ((-120.1, 632.0, 64.0), 255, 255, 255, 64, 3);
+				SpawnSpotLight ((-120.1, 632.0, 0), 255, 255, 255, 128, 180, 15, 45, 3);
+				SpawnSpotLight ((-120.1, 632.0, 128.0), 255, 255, 255, 128, 180, 15, 45, 3);
+				SpawnPointLight ((-120.1, 760.0, 64.0), 255, 255, 255, 64, 3);
+				SpawnSpotLight ((-120.1, 760.0, 0), 255, 255, 255, 128, 180, 15, 45, 3);
+				SpawnSpotLight ((-120.1, 760.0, 128.0), 255, 255, 255, 128, 180, 15, 45, 3);
+				SpawnPointLight ((-120.1, 824.0, 64.0), 64, 64, 255, 64, 3);
+				SpawnSpotLight ((-120.1, 824.0, 0), 64, 64, 255, 128, 180, 15, 45, 3);
+				SpawnSpotLight ((-120.1, 824.0, 128.0), 64, 64, 255, 128, 180, 15, 45, 3);
+				SpawnPointLight ((-264.0, 824.0, 64.0), 64, 64, 255, 64, 3);
+				SpawnSpotLight ((-264.0, 824.0, 0), 64, 64, 255, 128, 0, 15, 45, 3);
+				SpawnSpotLight ((-264.0, 824.0, 128.0), 64, 64, 255, 128, 0, 15, 45, 3);
+				break;
+				
+			Case '5eecd88f4491f516d590ce4bbf45f532': // MAP30
+					SetLineVertexes (55, 10, 26); // remove the dumb console error
+					SetSectorTexture (0, sector.floor, "NUKAGE1"); // Make the floor match the walls
+					break;
+					
+			Case 'aa4ca3fc891d13821accabd836e29eb5': // MAP32
+				SetSectorLight (0, 128);
+				SetSectorLight (3, 160);
+				SetSectorLight (8, 112);
+				SetSectorLight (9, 112);
+				SetSectorLight (1, 112);
+				SetSectorLight (2, 112);
+				SetSectorLight (12, 192);
+				SetSectorLight (13, 192);
+				SetSectorLight (10, 192);
+				break;
 		}
     }
 }

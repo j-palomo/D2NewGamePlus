@@ -1,1 +1,1 @@
-LOAD = "id24res.wad", "id1-tex.wad"
+LOAD = "id24res.wad", "id1-tex.wad", "D2NewGamePlus_Levels.pk3"
