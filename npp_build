@@ -9,6 +9,21 @@ if $(d) == 0 then
 cmd /c mkdir "$(CWD)\Levels\acs"
 endif
 
+set local f ~ direxists "$(CWD)\VFX\acs"
+if $(f) == 0 then
+cmd /c mkdir "$(CWD)\VFX\acs"
+endif
+cd "$(CWD)\VFX\"
+acc "$(CWD)\scripts\FX_D2_NGPLUS.acs" "$(CWD)\acs\FX_D2_NGPLUS.o"
+If $(EXITCODE) == 0
+7z a -tzip "D2NewGamePlus_VFX.pk3" *.txt* *.zscript* acs\ scripts\ zscript\
+If $(EXITCODE) == 0
+cmd /c move "D2NewGamePlus_VFX.pk3" ".."
+else
+npp_console 1
+endif
+endif
+cd ".."
 cd "$(CWD)\Levels\"
 acc "$(CWD)\scripts\D2_NGPLUS.acs" "$(CWD)\acs\D2_NGPLUS.o"
 If $(EXITCODE) == 0
@@ -21,7 +36,7 @@ endif
 endif
 cd ".."
 cd "$(CWD)\Weapons\"
-7z a -tzip "D2NewGamePlus_Weapons.pk3" *.txt* *.zmap *.zscript* acs\ brightmaps\ graphics\ scripts\ textures\ zscript\
+7z a -tzip "D2NewGamePlus_Weapons.pk3" *.txt* *.zmap *.zscript* graphics\ zscript\
 If $(EXITCODE) == 0
 cmd /c move "D2NewGamePlus_Weapons.pk3" ".."
 else

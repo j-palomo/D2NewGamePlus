@@ -1,0 +1,19 @@
+Glow
+{
+	Texture "NUKAGE1", SpringGreen, 64, fullbright
+}
+
+Glow
+{
+	Texture "NUKAGE2", SpringGreen, 64, fullbright
+}
+
+Glow
+{
+	Texture "NUKAGE3", SpringGreen, 64, fullbright
+}
+
+Glow
+{
+	Texture "NUKAGE4", SpringGreen, 64, fullbright
+}

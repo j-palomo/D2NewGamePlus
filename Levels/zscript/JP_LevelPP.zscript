@@ -23,22 +23,6 @@ Extend Class NGPLUS_LevelPostProcessor
 				case 'none':
 					return;
 				Case '3c9902e376cca1e9c3be8763bdc21df5': // MAP01
-					AddSectorTag (14, 1); // Water sector outside
-					AddSectorTag (10, 7);
-					AddSectorTag (11, 7);
-					AddSectorTag (12, 7);
-					AddSectorTag (24, 7);
-					AddSectorTag (26, 7);
-					AddSectorTag (17, 7);
-					AddSectorTag (15, 7);
-					AddSectorTag (30, 7);
-					// Fix the missing textures outside spawn
-					SetWallTexture (334, 1, 2, "BRONZE1");
-					SetWallTexture (334, 1, 1, "MIDBARS3");
-					SetWallTexture (335, 1, 2, "BRONZE1");
-					SetWallTexture (335, 1, 1, "MIDBARS3");
-					SetWallTexture (369, 1, 2, "BRONZE1");
-					SetWallTexture (369, 1, 1, "MIDBARS3");
 					// Spawn new things
 					SpawnThing(T_HellKnight, (-224.0, 1056.0, 0), 64, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing(T_Revenant, (384.0, 1376.0, 0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
@@ -67,33 +51,6 @@ Extend Class NGPLUS_LevelPostProcessor
 					SpawnThing (T_Shocktrooper, (416.0, 672.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing (T_Shocktrooper, (928.0, 736.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing (T_Archvile, (1248.0, 864.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
-					// Extra lighting
-					SpawnPointLight ((-128.0, 1376.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((0, 1376.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((0, 1504.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((-128.0, 1504.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((-128.0, 1632.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((32.0, 1663.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((96.0, 1536.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((224.0, 1536.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((416.0, 1663.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((320.0, 1444.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((447.9, 1440.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((320.0, 1312.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((320.0, 1056.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((447.9, 1312.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((320.0, 1184.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((448.0, 1184.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((20.0, 1056.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((448.0, 1056.0, 124.0), 255, 255, 127, 24);
-					SpawnPointLight ((992.0, 1036.0, 112.0), 255, 127, 127, 24);
-					// Line horizon for outdoor area
-					SetLineSpecial (304, 9);
-					SetLineSpecial (305, 9);
-					SetLineSpecial (306, 9);
-					SetLineSpecial (307, 9);
-					// Raise the wall on the outdoor area near spawn
-					OffsetSectorPlane (12, sector.floor, 64);
 					// Make the starting area a lift so players can get back up.
 					SetLineActivation (8, SPAC_Use);
 					SetWallTexture (354, Line.front, Side.bottom, "BRONZE1");
@@ -118,36 +75,8 @@ Extend Class NGPLUS_LevelPostProcessor
 					// Spawn keys
 					SpawnThing (T_RedKeyCard, (96.0, 2400.0, 0));
 					SpawnThing (T_BlueKeyCard, (640.0, 128.0, 0));
-					SetWallTexture (264, Line.front, Side.mid,"METTEK1");
-					SetWallTexture (265, Line.front, Side.mid,"METTEK1");
-					SetWallTexture (266, Line.front, Side.mid,"METTEK1");
-					SetWallTexture (267, Line.front, Side.mid,"METTEK1");
-					SetWallTexture (268, Line.front, Side.mid,"METTEK1");
-					SetWallTexture (269, Line.front, Side.mid,"METTEK1");
-					SetWallTexture (8, Line.front, Side.bottom, "STRUCTB5");
-					SetLineFlags (8, 0, Line.ML_DONTPEGBOTTOM);
-					AddLineID (8, 1); // How is 1 unused?
-					SetSectorTexture (58, sector.floor, "KCFGRAT1");
-					SetSectorTexture (57, sector.floor, "KCFMET2");
-					SetSectorTexture (57, sector.ceiling, "CEIL3_7");
-					SetSectorTexture (20, sector.floor, "KCFMET2S");
-					SetSectorTexture (40, sector.floor, "KCFMET2S");
-					SetWallTexture (239, Line.front, Side.bottom, "KCMET3H");
-					SetWallTexture (240, Line.front, Side.bottom, "KCMET3H");
-					SetWallTexture (241, Line.front, Side.bottom, "KCMET3H");
-					SetWallTexture (242, Line.front, Side.bottom, "KCMET3H");
-					SetWallTexture (251, Line.front, Side.bottom, "KCMET3H");
-					SetWallTexture (252, Line.front, Side.bottom, "KCMET3H");
-					SetWallTexture (253, Line.front, Side.bottom, "KCMET3H");
-					SetWallTexture (254, Line.front, Side.bottom, "KCMET3H");
-					SetSectorTexture (0, Sector.Floor, "FLOOR3_7");
-					SetSectorTexture (2, Sector.Floor, "FLAT13");
-					SetSectorTexture (3, Sector.Floor, "FLAT13");
-					SetSectorTexture (4, Sector.Floor, "FLAT13");
-					SetSectorTexture (5, Sector.Floor, "FLAT13");
-					SetSectorTexture (6, Sector.Floor, "FLAT13");
 					break;
-					
+/*					
 				Case 'ab24ae6e2cb13cbdd04600a4d37f9189': // MAP02
 					AddSectorTag (11, 6); // Water near spawn
 					AddSectorTag (2, 15); // Water after first switch
@@ -636,6 +565,7 @@ Extend Class NGPLUS_LevelPostProcessor
 					ClearLineSpecial (167);
 					ClearLineSpecial (168);
 					break;
+*/
 			}
 		}
     }

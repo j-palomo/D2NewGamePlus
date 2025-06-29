@@ -70,32 +70,6 @@
 Class NGPLUS_LevelPostProcessor : LevelCompatibility
 {
 	protected uint SpawnThing (int ednum, Vector3 pos, int angle = 0, uint flags = MTF_SINGLE|MTF_COOPERATIVE)	{return AddThing(ednum, pos, angle, SKILLS_NIGHTMARE, flags);}
-	protected uint SpawnPointLight (Vector3 pos, int red = 255, int green = 255, int blue = 255, int intensity = 64, int tid = 0)
-	{
-		uint SpawnedLight = SpawnThing(T_PointLight, pos, 0);
-		SetThingArgument (SpawnedLight, 0, red);
-		SetThingArgument (SpawnedLight, 1, green);
-		SetThingArgument (SpawnedLight, 2, blue);
-		SetThingArgument (SpawnedLight, 3, intensity);
-		SetThingID (SpawnedLight, tid);
-		return SpawnedLight;
-	}
-	
-	protected uint SpawnSpotLight (Vector3 pos, int red = 255, int green = 255, int blue = 255, int intensity = 64, int angle = 0, int inner_angle = 8, int outer_angle = 32, int tid = 0)
-	{
-		uint SpawnedLight = SpawnThing(T_SpotLight, pos, angle);
-		int r, g, b;
-		r = (red << 16);
-		g = (green << 8);
-		b = blue;
-		int lightcolor = r|g|b; 
-		SetThingArgument (SpawnedLight, 0, lightcolor);
-		SetThingArgument (SpawnedLight, 1, inner_angle);
-		SetThingArgument (SpawnedLight, 2, outer_angle);
-		SetThingArgument (SpawnedLight, 3, intensity);
-		SetThingID (SpawnedLight, tid);
-		return SpawnedLight;
-	}
 	
 	protected void SetWallXScale(int line, int side, int texpart, double scale)
 	{
