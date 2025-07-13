@@ -1,4 +1,4 @@
-# How to build:
+# How to build (in Windows):
 ## Download and install [7-zip](https://www.7-zip.org/)
   Make sure to add the install directory to your `PATH` environment variable.
 ## Download a build of [ACC](https://github.com/ZDoom/acc/releases)
@@ -15,3 +15,11 @@
 
 # Other Recommended tools for editing:
 ## [Slade 3](https://slade.mancubus.net/index.php?page=about)
+
+# How to build (in Linux):
+## Download and place [ACC](https://github.com/ZDoom/acc/releases/download/1.60/acc-1.60-linux64.zip) in root directory of project.
+  Extract the files from the .zip, then place them in the root directory.
+## Run build.sh
+ Open a terminal in the base directory, then type:
+
+     bash build.sh
