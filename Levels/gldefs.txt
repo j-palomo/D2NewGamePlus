@@ -13,6 +13,11 @@ Glow
 	Texture "NUKAGE3", SpringGreen, 64, fullbright
 }
 
+Glow
+{
+	Texture "NUKAGE4", SpringGreen, 64, fullbright
+}
+
 flickerlight HEATWAVE1
 {
     color 0.91 0.596 0.379
