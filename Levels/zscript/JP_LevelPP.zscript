@@ -216,6 +216,9 @@ Extend Class NGPLUS_LevelPostProcessor
 					SpawnThing (T_Shocktrooper, (-768.0, 1040.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing (T_Stimpack, (-992.0, 1520.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_PlasmaRifle, (-944.0, 464.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_Ghoul, (-288.0, 464.0, 72.0),90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Ghoul, (-240.0, 448.0, 72.0),90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Ghoul, (-288.0, 416.0, 72.0),90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					break;
 					
 				Case '9e061ad7fbcd7fad968c976cb4aa3b9d': // MAP05
