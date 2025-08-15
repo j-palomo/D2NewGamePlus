@@ -1,8 +1,16 @@
-	// Change these 4 constants if the final editor numbers for the weapons is decided
+	// Change these 12 constants if the final editor numbers for the weapons is decided.
 	const T_FuelAmmoSmall = -28622;
 	const T_FuelAmmoLarge = -28621;
 	const T_Incinerator = -28619;
 	const T_Heatwave = -28620;
+	const T_Ghoul = -28672;
+	const T_Banshee = -28671;
+	const T_Mindweaver = -28670;
+	const T_Shocktrooper = -28669;
+	const T_Vassago = -28668;
+	const T_Tyrant = -28667;
+	const T_TyrantBoss1 = -28666;
+	const T_TyrantBoss2 = -28665;
 	//
 	const SKILLS_NIGHTMARE = 16;
 	const T_BlueKeyCard = 5;
@@ -54,14 +62,6 @@
 	const T_Zombieman = 3004;
 	const T_Cacodemon = 3005;
 	const T_LostSoul = 3006;
-	const T_Ghoul = 3007;
-	const T_Banshee = 3008;
-	const T_Mindweaver = 3009;
-	const T_Shocktrooper = 3010;
-	const T_Vassago = 3011;
-	const T_Tyrant = 3012;
-	const T_TyrantBoss1 = 3013;
-	const T_TyrantBoss2 = 3014;
 	const T_SecurityCamera = 9025;
 	const T_PointLight = 9800;
 	const T_SpotLight = 9840;

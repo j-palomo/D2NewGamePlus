@@ -40,12 +40,12 @@ Skill NewGameMinus // More aggressive, but easier to kill
 
 DoomEdNums
 {
-	3007 = "Ghoul"
-	3008 = "Banshee"
-	3009 = "Mindweaver"
-	3010 = "Shocktrooper"
-	3011 = "Vassago"
-	3012 = "Tyrant"
-	3013 = "TyrantBoss1"
-	3014 = "TyrantBoss2"
+	-28672 = "Ghoul"
+	-28671 = "Banshee"
+	-28670 = "Mindweaver"
+	-28669 = "Shocktrooper"
+	-28668 = "Vassago"
+	-28667 = "Tyrant"
+	-28666 = "TyrantBoss1"
+	-28665 = "TyrantBoss2"
 }
