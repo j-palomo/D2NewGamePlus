@@ -1,0 +1,19 @@
+[default]
+TAG_GHOUL = "Ghoul";
+OB_GHOUL = "%o was scared by a Ghoul.";
+
+TAG_BANSHEE = "Banshee";
+OB_BANSHEE = "%o was screamed at by a Banshee.";
+
+TAG_MINDWEAVER = "Mindweaver";
+OB_MINDWEAVER = "%o was riddled with holes by a Mindweaver.";
+
+TAG_SHOCKTROOPER = "Shocktrooper";
+OB_SHOCKTROOPER = "%o was plasma'd by a Shocktrooper.";
+
+TAG_VASSAGO = "Vassago";
+OB_VASSAGO1 = "%o was ripped in half by a Vassago.";
+OB_VASSAGO2 = "%o was roasted by a Vassago.";
+
+TAG_TYRANT = "Tyrant";
+OB_TYRANT = "A Tyrant blew up %o.";

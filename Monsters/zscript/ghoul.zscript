@@ -1,0 +1,52 @@
+Class EvasiveGhoul : Actor replaces Ghoul
+{
+
+	Default
+	{
+		Health 50;
+		Speed 12;
+		Radius 16;
+		Height 40;
+		ReactionTime 8;
+		PainChance 128;
+		Mass 50;
+		Monster;
+		+FLOAT;
+		+NOGRAVITY;
+		Tag "$TAG_GHOUL";
+		SeeSound "ghoul/sight";
+		ActiveSound "ghoul/active";
+		PainSound "ghoul/pain";
+		DeathSound "ghoul/death";
+		Obituary "$OB_GHOUL";
+		BloodColor "White";
+	}
+	
+	States
+	{
+		Spawn:
+			GHUL AB 10 A_Look;
+			loop;
+		See:
+			GHUL AABBCCBB 3 A_Chase;
+			loop;
+		Missile:
+			GHUL D 4 Bright A_FaceTarget;
+			GHUL E 4 Bright Light ("GHOULATTACK") A_FaceTarget;
+			GHUL F 4 Bright Light ("GHOULATTACK") A_SpawnProjectile("GhoulBall", 20.0);
+			GHUL G 4 Bright Light ("GHOULATTACK");
+			goto see;
+		Pain:
+			GHUL IJ 2 Bright Light ("GHOULPAIN");
+			GHUL K 2 Bright Light ("GHOULPAIN") A_Pain;
+			goto see;
+		Death:
+			GHUL L 5 Bright;
+			GHUL M 5 Bright A_Scream;
+			GHUL NO 5 Bright;
+			GHUL P 5 Bright A_Fall;
+			GHUL QR 5 Bright;
+			GHUL S -1;
+			stop;
+	}
+}

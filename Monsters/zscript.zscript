@@ -1,0 +1,8 @@
+version "4.12"
+
+#include "zscript/ghoul.zscript"
+#include "zscript/banshee.zscript"
+#include "zscript/mindweaver.zscript"
+#include "zscript/shocktrooper.zscript"
+#include "zscript/vassago.zscript"
+#include "zscript/tyrant.zscript"

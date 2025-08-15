@@ -1,0 +1,98 @@
+//
+// Ghoul
+//
+ghoul/sight				    DSGHLSIT
+ghoul/active				DSGHLACT
+ghoul/pain					DSGHLPAI
+ghoul/death					DSGHLDTH
+ghoul/shotf					DSGHLSHT
+ghoul/shotx					DSGHLXPL
+// Aliases
+ghlsit						DSGHLSIT
+ghlact						DSGHLACT 
+ghlpai						DSGHLPAI 
+ghldth						DSGHLDTH 
+firsht						DSFIRSHT
+firxpl						DSFIRXPL
+$alias ghoul/shotf			firsht // comment this out if id24res.wad includes sounds for these
+$alias ghoul/shotx			firxpl
+
+//
+// Banshee
+//
+//banshee/sight				DSBANSIT
+banshee/sight				DSBANPAI
+$pitchset banshee/sight 0.8
+banshee/pain				DSBANPAI
+banshee/death				DSBANDTH
+banshee/active				DSBANACT
+// Aliases
+bansit						DSBANSIT
+banact						DSBANACT
+banpai						DSBANPAI
+bandth						DSBANDTH
+
+//
+// Mindweaver
+//
+mindweaver/active			DSCSPACT
+mindweaver/sight			DSCSPSIT
+mindweaver/pain				DSCSPPAI
+mindweaver/death			DSCSPDTH
+mindweaver/walk				DSCSPWLK
+// Aliases
+cspsit						DSCSPSIT 
+cspwlk						DSCSPWLK 
+cspact						DSCSPACT 
+dmpain						DSCSPPAI 
+cspdth						DSCSPDTH 
+
+//
+// Shocktrooper
+//
+shocktrooper/active			DSPPOACT
+shocktrooper/pain			DSPPOPAI
+shocktrooper/death			DSPPODTH
+shocktrooper/head			DSPPOHED
+// Aliases
+ppoact						DSPPOACT
+ppopai						DSPPOPAI
+ppodth						DSPPODTH
+ppohed						DSPPOHED
+
+//
+// Vassago
+//
+vassago/sight				DSVASSIT
+vassago/active				DSVASACT
+vassago/attack				DSVASATK
+vassago/pain				DSVASPAI
+vassago/death				DSVASDTH
+// Everything below this is not found in id24res.wad
+vassago/fire				DSINCBRN
+vassago/explode				DSFLAME
+vassago/shot1				DSINCHT1
+vassago/shot2				DSINCHT2
+vassago/shot3				DSINCHT3
+vassago/melee				DSCLAW
+// Aliases
+vassit						DSVASSIT
+vasact						DSVASACT
+vasatk						DSVASATK
+vaspai						DSVASPAI
+vasdth						DSVASDTH
+
+$random vassago/shot {vassago/shot1 vassago/shot2 vassago/shot3}
+
+//
+// Tyrant
+//
+tyrant/walk					DSTYRWLK
+tyrant/sight				DSTYRSIT
+tyrant/pain					DSDMPAIN
+tyrant/death				DSTYRDTH
+tyrant/active				DSDMACT
+
+
+$random menu/quit3 { shocktrooper/death tyrant/sight vassago/pain shocktrooper/head banshee/active ghoul/sight vassago/attack vassago/sight}
+

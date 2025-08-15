@@ -42,3 +42,11 @@ cmd /c move "D2NewGamePlus_Weapons.pk3" ".."
 else
 npp_console 1
 endif
+cd ".."
+cd "$(CWD)\Monsters\"
+7z a -tzip "D2NewGamePlus_Monsters.pk3" *.txt* *.zmap *.zscript* zscript\
+If $(EXITCODE) == 0
+cmd /c move "D2NewGamePlus_Monsters.pk3" ".."
+else
+npp_console 1
+endif
