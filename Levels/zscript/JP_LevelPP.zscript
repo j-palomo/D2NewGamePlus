@@ -210,7 +210,9 @@ Extend Class NGPLUS_LevelPostProcessor
 					break;
 				
 				Case 'cec791136a83eec4b91d39718bdf9d82': // MAP04
+					OffsetSectorPlane (49, Sector.floor, -64); // Box is lowered to put a new weapon on it
 					SpawnThing (T_Chaingun, (-928.0, 1632.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_Shotgun, (-992.0, 1488.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					SpawnThing (T_Shocktrooper, (-848.0, 1520.0, 0), 225, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing (T_Shocktrooper, (-768.0, 1040.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing (T_Shocktrooper, (-768.0, 1040.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
@@ -221,6 +223,25 @@ Extend Class NGPLUS_LevelPostProcessor
 					SpawnThing (T_Ghoul, (-288.0, 416.0, 72.0), 90, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
 					SpawnThing (T_Banshee, (-368.0, 1376.0,0), 0, MTF_SINGLE|MTF_COOPERATIVE);
 					SpawnThing (T_Banshee, (-496.0, 1648.0,0), 270, MTF_SINGLE|MTF_COOPERATIVE);
+					SpawnThing (T_Mindweaver, (-376.0, 1440.0,0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Vassago, (-128.0, 1760.0, 0), 180, MTF_SINGLE|MTF_COOPERATIVE|MTF_AMBUSH);
+					SpawnThing (T_Vassago, (-1120.0, 1312.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE);
+					SpawnThing (T_Ghoul, (-1312.0, 1376.0, 128.0), 180, MTF_SINGLE|MTF_COOPERATIVE);
+					SpawnThing (T_Ghoul, (-1312.0, 1248.0, 128.0), 180, MTF_SINGLE|MTF_COOPERATIVE);
+					SpawnThing (T_Incinerator, (-992.0,352.0,0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_Heatwave, (-320.0, 1696.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoSmall, (-192.0, 912.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoSmall, (-944.0, 352.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoSmall, (-448.0, 480.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoSmall, (-176.0, 1128.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoSmall, (-208.0, 1392.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoSmall, (-544.0, 1800.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoSmall, (-1248.0, 1184.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_FuelAmmoSmall, (-1248.0, 1440.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_Infrared, (-624.0, 1902.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_Medikit, (-160.0, 1440.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_Stimpack, (-384.0, 1728.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
+					SpawnThing (T_Stimpack, (-1120.0, 1312.0, 0), 0, MTF_SINGLE|MTF_COOPERATIVE|MTF_DEATHMATCH);
 					break;
 					
 				Case '9e061ad7fbcd7fad968c976cb4aa3b9d': // MAP05

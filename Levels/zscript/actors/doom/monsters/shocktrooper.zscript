@@ -22,7 +22,6 @@ Class Shocktrooper : Actor replaces Deh_Actor_153
 		GibHealth 30; // We almost never get -100 health unless hit with a rocket/bfgball at really low health
 		Tag "$TAG_SHOCKTROOPER";
 		Obituary "$OB_SHOCKTROOPER";
-		DropItem "Cell";
 	}
 	
 	States
@@ -103,13 +102,7 @@ Class ShocktrooperHead : Actor
 		-SOLID;
 		+MISSILE;
 		+DROPOFF;
-		BounceType "Doom";
-		BounceFactor 0.5;
-		+BOUNCEONACTORS;
-		+CANBOUNCEWATER;
-		+BOUNCEAUTOOFFFLOORONLY;
 		Gravity 0.125;
-		BounceSound "shocktrooper/head";
 		DeathSound "shocktrooper/head";
 	}
 	
