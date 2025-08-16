@@ -145,16 +145,16 @@ Script "MAP02_2ndSwitch" (Int RedLight)
 
 Script "MAP02_BlueKey" (void)
 {
-	Int AV_TID = UniqueTID();
-	SpawnForced ("Archvile", 880.0, 1064.0, 0, AV_TID, 128);
-	SetActorFlag (AV_TID, "AMBUSH", true);
+	Int V_TID = UniqueTID();
+	SpawnForced ("Vassago", 880.0, 1064.0, 0, V_TID, 128);
+	SetActorFlag (V_TID, "AMBUSH", true);
 }
 
 Script "MAP02_RedKey" (void)
 {
-	Int AV_TID = UniqueTID();
-	SpawnForced ("Archvile", 512.0, 1600.0, 0, AV_TID, 192);
-	SetActorFlag (AV_TID, "AMBUSH", true);
+	Int V_TID = UniqueTID();
+	SpawnForced ("Vassago", 512.0, 1600.0, 0, V_TID, 192);
+	SetActorFlag (V_TID, "AMBUSH", true);
 }
 
 Script "D2_MAP03_Open" Open
@@ -218,6 +218,8 @@ Script "D2_MAP04_Open" Open
 			If (CheckMapMD5 ("cec791136a83eec4b91d39718bdf9d82", "MAP04"))
 			{
 				SetThingSpecial (2, ACS_NamedExecuteAlways, "MAP04_BlueKeyPickup");
+				SetLineSpecial (20, ACS_NamedLockedExecute, "MAP04_ExitFloorLift", 0, 0, 0, 3); // requires yellow card
+				SetLineSpecial (16, ACS_NamedExecuteAlways, "MAP04_ExitTrap");
 			}
 		}
 	}
@@ -227,6 +229,34 @@ Script "MAP04_BlueKeyPickup" (void)
 {
 	AutoSave ();
 	Door_Open (5, 64);
+}
+
+Script "MAP04_ExitFloorLift" (void)
+{
+	AutoSave ();
+	Delay (35);
+	Floor_RaiseToNearest (20, 8);
+	Floor_RaiseToNearest (21, 8);
+	SpawnForced ("Banshee", -1760.0, 1360.0, 0);
+	SpawnForced ("TeleportFog", -1760.0, 1360.0, 0);
+	SpawnForced ("Banshee", -1408.0, 1360.0, 0);
+	SpawnForced ("TeleportFog", -1408.0, 1360.0, 0);
+	SpawnForced ("Banshee", -1600.0, 1360.0, 0);
+	SpawnForced ("TeleportFog", -1600.0, 1360.0, 0);
+	SpawnForced ("Banshee", -1312.0, 1360.0, 0);
+	SpawnForced ("TeleportFog", -1312.0, 1360.0, 0);
+}
+
+Script "MAP04_ExitTrap" (void)
+{
+	Int V_TID = UniqueTID();
+	Door_Open (16, 64, 16);
+	Door_Close (22, 128, 22);
+	TagWait (22);
+	SpawnForced ("Vassago", -1936.0, 1312.0, 0, V_TID, 0);
+	SetActorFlag (V_TID, "AMBUSH", true);
+	Delay (35*5);
+	Door_Open (22, 8, 22);
 }
 
 Script "D2_MAP07_Open" Open
